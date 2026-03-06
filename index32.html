@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MASTER PLUMBER REVIEWER</title>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary: #0f172a; --accent: #3b82f6; --success: #10b981; --danger: #ef4444;
+            --warning: #f59e0b; --bg: #f8fafc; --card: #ffffff; --text: #1e293b;
+            --sub: #64748b; --border: #e2e8f0; --btn-ghost: #f1f5f9;
+        }
+        [data-theme="dark"] {
+            --primary: #38bdf8; --accent: #0ea5e9; --success: #34d399; --danger: #f87171;
+            --warning: #fbbf24; --bg: #020617; --card: #0f172a; --text: #f1f5f9;
+            --sub: #94a3b8; --border: #1e293b; --btn-ghost: #1e293b;
+        }
+
+        * { box-sizing: border-box; font-family: 'Poppins', sans-serif; transition: 0.3s; }
+        body { background: var(--bg); color: var(--text); margin: 0; display: flex; justify-content: center; min-height: 100vh; padding: 20px; }
+
+        .app-card { 
+            width: 100%; max-width: 500px; background: var(--card); padding: 30px; 
+            border-radius: 28px; box-shadow: 0 20px 50px rgba(0,0,0,0.1); 
+            position: relative;
+        }
+
+        .controls { position: absolute; top: 20px; right: 20px; display: flex; align-items: center; gap: 10px; }
+        .theme-switch { 
+            background: var(--btn-ghost); color: var(--text); width: 40px; height: 40px; 
+            border-radius: 12px; display: flex; align-items: center; justify-content: center; cursor: pointer; border: none; 
+        }
+        .score-display { background: var(--accent); color: #fff; padding: 6px 14px; border-radius: 12px; font-size: 13px; font-weight: 700; display: none; }
+
+        .brand { text-align: center; margin-bottom: 30px; margin-top: 15px; }
+        .logo-box { width: 70px; height: 70px; background: var(--accent); color: white; margin: 0 auto 15px; border-radius: 20px; display: flex; align-items: center; justify-content: center; font-size: 40px; }
+        
+        .screen { display: none; animation: fadeIn 0.4s ease; }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+        button { width: 100%; padding: 16px; margin: 10px 0; border: none; border-radius: 16px; font-size: 14px; font-weight: 600; cursor: pointer; background: var(--btn-ghost); color: var(--text); display: flex; align-items: center; justify-content: center; gap: 10px; }
+        .btn-main { background: var(--accent); color: #fff !important; }
+        
+        .exam-row { display: flex; gap: 10px; }
+        .btn-exam { background: var(--card); border: 2px solid var(--border); flex: 1; color: var(--text); font-weight: 700; }
+        .btn-eye { width: 60px; background: var(--warning); color: #fff !important; font-size: 20px; }
+
+        .q-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
+        .btn-report { background: transparent; color: var(--sub); width: auto; padding: 5px 10px; margin: 0; font-size: 11px; border: 1px solid var(--border); border-radius: 8px; }
+        
+        .correct { background: var(--success) !important; color: white !important; border: none !important; }
+        .wrong { background: var(--danger) !important; color: white !important; border: none !important; }
+
+        #ansFeedback { font-size: 12px; font-weight: 700; text-align: center; margin-bottom: 10px; min-height: 18px; }
+
+        .modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); display: none; justify-content: center; align-items: center; z-index: 100; }
+        .modal { background: var(--card); width: 90%; max-width: 400px; padding: 25px; border-radius: 20px; }
+        
+        .shake { animation: shake 0.4s; }
+        @keyframes shake { 0%,100%{transform:translateX(0)} 25%{transform:translateX(-8px)} 75%{transform:translateX(8px)} }
+        
+        /* New Image Style */
+        #qImg { width: 100%; border-radius: 15px; margin-bottom: 15px; display: none; object-fit: contain; max-height: 250px; background: #eee; }
+    </style>
+</head>
+<body data-theme="light">
+
+<div id="reportModal" class="modal-overlay">
+    <div class="modal">
+        <h3>Report Question</h3>
+        <select id="reportType" style="width:100%; padding:10px; margin:10px 0; border-radius: 8px;">
+            <option>Wrong Answer</option>
+            <option>Typo in Question</option>
+        </select>
+        <textarea id="reportDetails" style="width:100%; padding:10px; border-radius: 8px;" rows="4" placeholder="Details..."></textarea>
+        <div style="display:flex; gap:10px; margin-top:15px;">
+            <button onclick="closeReport()">Cancel</button>
+            <button class="btn-main" style="justify-content:center; padding:0;" onclick="submitReport()">Submit</button>
+        </div>
+    </div>
+</div>
+
+<div class="app-card" id="appBody">
+    <div class="controls">
+        <div id="scoreBox" class="score-display">0/0</div>
+        <button class="theme-switch" onclick="toggleTheme()"><ion-icon id="themeIcon" name="moon-outline"></ion-icon></button>
+    </div>
+
+    <div class="brand">
+        <div class="logo-box"><ion-icon name="school-outline"></ion-icon></div>
+        <h1 style="font-size: 18px;">MASTER PLUMBER REVIEWER</h1>
+        <div style="font-size: 11px; color: var(--sub); font-weight: 600;">Engr. Jay Tristan Medallon, MP</div>
+    </div>
+
+    <div id="home" class="screen" style="display: block;">
+        <button class="btn-main" onclick="openExams('Plumbing Code')">Plumbing Code</button>
+        <button class="btn-main" onclick="openExams('Plumbing Arithmetic')">Plumbing Arithmetic</button>
+        <button class="btn-main" onclick="openExams('Sanitation Plumbing Design and Installation')">Sanitation & Design</button>
+        <button class="btn-main" onclick="openExams('Practical Problems and Experiences')">Practical Problems</button>
+    </div>
+
+    <div id="exams" class="screen">
+        <h2 id="catTitle" style="font-size: 14px; text-align: center; color: var(--accent); margin-bottom: 20px;"></h2>
+        <div id="examGrid" style="max-height: 380px; overflow-y: auto;"></div>
+        <button onclick="setScreen('home')">Back</button>
+    </div>
+
+    <div id="quiz" class="screen">
+        <div class="q-header">
+            <div id="qNum" style="font-size: 10px; font-weight: 800; color: var(--accent);"></div>
+            <button class="btn-report" onclick="openReport()">Report</button>
+        </div>
+        <img id="qImg" src="" alt="Question Diagram">
+        <div id="qTxt" style="font-size: 16px; font-weight: 600; line-height: 1.5; margin-bottom: 25px;"></div>
+        <div id="choices"></div>
+        <div id="ansFeedback"></div>
+        <div style="display:flex; gap:10px;">
+            <button id="bBtn" onclick="prevQ()" style="flex:1">Back</button>
+            <button id="nBtn" onclick="handleNextLogic()" style="flex:2" class="btn-main">Next</button>
+        </div>
+    </div>
+
+    <div id="results" class="screen">
+        <h2 id="resScore" style="text-align: center;"></h2>
+        <div id="revScroll" style="max-height: 350px; overflow-y: auto;"></div>
+        <button class="btn-main" style="justify-content:center;" onclick="startQuiz(currentExamIdx)">Retake Exam</button>
+        <button onclick="openExams(currentCat)">Back to Exams</button>
+    </div>
+</div>
+
+<script type="module">
+    // 1. IMPORT
+    import { ArithmeticDB } from './arithmetic.js';
+    import { CodeDB } from './code.js';
+    import { DesignDB } from './design.js';
+    import { PracticalDB } from './practical.js';
+
+    // 2. CONSOLIDATE
+    const DB = {
+        "Plumbing Arithmetic": ArithmeticDB,
+        "Plumbing Code": CodeDB,
+        "Sanitation Plumbing Design and Installation": DesignDB,
+        "Practical Problems and Experiences": PracticalDB
+    };
+
+    // 3. APP STATE
+    let currentCat, currentExamIdx, currentQs, curIdx = 0, answers = [], score = 0, isRevealed = false;
+
+    // 4. WINDOW FUNCTIONS (Required for HTML buttons to work)
+    window.toggleTheme = () => {
+        const b = document.body;
+        const isLight = b.getAttribute('data-theme') === 'light';
+        b.setAttribute('data-theme', isLight ? 'dark' : 'light');
+        document.getElementById('themeIcon').setAttribute('name', isLight ? 'sunny-outline' : 'moon-outline');
+    };
+
+    window.openReport = () => { document.getElementById('reportModal').style.display = 'flex'; };
+    window.closeReport = () => { document.getElementById('reportModal').style.display = 'none'; };
+    window.submitReport = () => {
+        const type = document.getElementById('reportType').value;
+        const msg = document.getElementById('reportDetails').value;
+        fetch("https://formspree.io/f/jaytristanmedallon12345@gmail.com", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ category: currentCat, exam: currentExamIdx, question: currentQs[curIdx].q, issue: type, details: msg })
+        }).then(() => { alert("Sent!"); window.closeReport(); });
+    };
+
+    window.setScreen = (id) => {
+        document.querySelectorAll('.screen').forEach(s => s.style.display = 'none');
+        document.getElementById(id).style.display = 'block';
+        document.getElementById('scoreBox').style.display = (id === 'quiz') ? 'block' : 'none';
+    };
+
+    window.openExams = (cat) => {
+        currentCat = cat;
+        document.getElementById('catTitle').innerText = cat.toUpperCase();
+        const grid = document.getElementById('examGrid'); grid.innerHTML = "";
+        
+        // Dynamic exam count based on your JS files
+        const categoryData = DB[cat] || {};
+        const totalExams = Object.keys(categoryData).length;
+
+        if(totalExams === 0) {
+            grid.innerHTML = "<p style='text-align:center; font-size:12px; color:var(--sub);'>Coming soon!</p>";
+        } else {
+            for(let i=1; i<=totalExams; i++) {
+                grid.innerHTML += `
+                    <div class="exam-row">
+                        <button class="btn-exam" onclick="startQuiz(${i})">EXAM #${i}</button>
+                        <button class="btn-eye" onclick="showReview(${i}, true)"><ion-icon name="eye-outline"></ion-icon></button>
+                    </div>`;
+            }
+        }
+        window.setScreen('exams');
+    };
+
+    window.startQuiz = (idx) => {
+        currentExamIdx = idx;
+        currentQs = DB[currentCat][idx];
+        curIdx = 0; 
+        answers = new Array(currentQs.length).fill(null);
+        isRevealed = false;
+        window.setScreen('quiz'); 
+        window.loadQ();
+    };
+
+    window.loadQ = () => {
+        isRevealed = false;
+        document.getElementById('ansFeedback').innerText = "";
+        const qData = currentQs[curIdx];
+        
+        document.getElementById('qNum').innerText = `EXAM #${currentExamIdx} • Q${curIdx+1}`;
+        document.getElementById('qTxt').innerText = qData.q;
+
+        // Image Handling
+        const imgBox = document.getElementById('qImg');
+        if (qData.img) {
+            imgBox.src = "images/" + qData.img;
+            imgBox.style.display = "block";
+        } else {
+            imgBox.style.display = "none";
+        }
+
+        const box = document.getElementById('choices'); 
+        box.innerHTML = "";
+        
+        qData.choices.forEach((c, i) => {
+            const b = document.createElement('button');
+            b.innerText = c;
+            // Handle state if returning to answered question
+            if(answers[curIdx] !== null) {
+                b.disabled = true;
+                if(i === qData.a) b.classList.add('correct');
+                else if(i === answers[curIdx]) b.classList.add('wrong');
+            }
+            b.onclick = () => {
+                answers[curIdx] = i;
+                Array.from(box.children).forEach(btn => btn.style.border = "none");
+                b.style.border = "2px solid var(--accent)";
+                updateScore();
+            };
+            box.appendChild(b);
+        });
+    };
+
+    window.prevQ = () => { curIdx === 0 ? window.openExams(currentCat) : (curIdx--, window.loadQ()); };
+    
+    window.handleNextLogic = () => {
+        if(answers[curIdx] === null) {
+            document.getElementById('appBody').classList.add('shake');
+            setTimeout(() => document.getElementById('appBody').classList.remove('shake'), 400);
+            return;
+        }
+        if(!isRevealed) { 
+            revealCurrentAnswer(); 
+            isRevealed = true; 
+            return; 
+        }
+        if(curIdx < currentQs.length - 1) { 
+            curIdx++; 
+            window.loadQ(); 
+        } else { 
+            window.showReview(null, false); 
+        }
+    };
+
+    function revealCurrentAnswer() {
+        const qData = currentQs[curIdx];
+        const box = document.getElementById('choices');
+        const feedback = document.getElementById('ansFeedback');
+        Array.from(box.children).forEach((btn, i) => {
+            btn.disabled = true;
+            btn.style.border = "none";
+            if(i === qData.a) btn.classList.add('correct');
+            else if(i === answers[curIdx]) btn.classList.add('wrong');
+        });
+        feedback.innerText = (answers[curIdx] === qData.a) ? "Correct!" : "Wrong! Answer: " + qData.choices[qData.a];
+        feedback.style.color = (answers[curIdx] === qData.a) ? "var(--success)" : "var(--danger)";
+    }
+
+    function updateScore() {
+        score = answers.filter((a, i) => a === currentQs[i].a).length;
+        document.getElementById('scoreBox').innerText = `${score} / ${currentQs.length}`;
+    }
+
+    window.showReview = (idx, isStudy) => {
+        const list = isStudy ? DB[currentCat][idx] : currentQs;
+        const scroll = document.getElementById('revScroll'); scroll.innerHTML = "";
+        document.getElementById('resScore').innerText = isStudy ? `EXAM #${idx} GUIDE` : `RESULT: ${score}/${list.length}`;
+        list.forEach((qData, i) => {
+            const isWrong = !isStudy && answers[i] !== qData.a;
+            scroll.innerHTML += `
+                <div style="padding:15px; background:var(--bg); border-radius:12px; margin-bottom:10px;">
+                    <b style="font-size:13px;">${i+1}. ${qData.q}</b><br>
+                    <small style="color:var(--success); font-weight:700;">✔ ${qData.choices[qData.a]}</small>
+                    ${isWrong ? `<br><small style="color:var(--danger); font-weight:700;">✖ ${qData.choices[answers[i]]}</small>` : ''}
+                </div>`;
+        });
+        window.setScreen('results');
+    };
+</script>
+</body>
+</html>
