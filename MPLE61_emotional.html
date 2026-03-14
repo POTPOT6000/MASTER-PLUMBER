@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- saved from url=(0062)file:///C:/Users/potpot6000/Downloads/MPLE61_emotional_16.html -->
+<!-- saved from url=(0062)file:///C:/Users/potpot6000/Downloads/MPLE61_emotional_17.html -->
 <html lang="en" class="hydrated"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <style data-styles="">ion-icon{visibility:hidden}.hydrated{visibility:inherit}</style>
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
@@ -11,8 +11,8 @@
 <link rel="manifest" href="file:///C:/Users/potpot6000/Downloads/manifest.json">
 <link rel="apple-touch-icon" href="file:///C:/Users/potpot6000/Downloads/img/icon-192.png">
 <title id="appTitle">Master Plumber — Board Reviewer</title>
-<script type="module" src="./Master Plumber — Board Reviewer00001_files/ionicons.esm.js.download"></script>
-<link href="./Master Plumber — Board Reviewer00001_files/css2" rel="stylesheet">
+<script type="module" src="./Master Plumber — Board Reviewer111_files/ionicons.esm.js.download"></script>
+<link href="./Master Plumber — Board Reviewer111_files/css2" rel="stylesheet">
 <style>
 /* ════════════════════════════════════════════════════════════════
    MASTER PLUMBER REVIEWER — EMOTIONAL DESIGN SYSTEM
@@ -893,13 +893,13 @@ a.res-open-btn{display:flex;align-items:center;justify-content:center;gap:8px;wi
 <div class="shell">
 
 <!-- ════ HUD ════ -->
-<div id="hud">
-  <div class="hav" id="hudAv">MP</div>
+<div id="hud" class="on">
+  <div class="hav" id="hudAv">G</div>
   <div class="hinfo">
-    <div class="hnm" id="hudNm">Reviewer</div>
-    <div class="hmeta">
+    <div class="hnm" id="hudNm">Guest</div>
+    <div class="hmeta"><div id="hudRoleTag" class="role-tag student">STUDENT</div>
       <div class="hlv" id="hudLv">LV 1</div>
-      <div class="hxpr"><div class="hxpf" id="hudXP"></div></div>
+      <div class="hxpr"><div class="hxpf" id="hudXP" style="width: 0%;"></div></div>
       <div class="hxpn" id="hudXPN">0 XP</div>
     </div>
   </div>
@@ -910,12 +910,12 @@ a.res-open-btn{display:flex;align-items:center;justify-content:center;gap:8px;wi
 </div>
 
 <!-- ════ QUIZ PROGRESS BAR ════ -->
-<div id="qpw" style="display:none;"><div class="rail" style="margin-bottom:16px;"><div class="fill" id="qpf" style="width:0%;"></div></div></div>
+<div id="qpw" style="display: none;"><div class="rail" style="margin-bottom:16px;"><div class="fill" id="qpf" style="width:0%;"></div></div></div>
 
 <!-- ═══════════════════════════════════════
      SCREEN: SPLASH
      ═══════════════════════════════════════ -->
-<div id="sSplash" class="scr on">
+<div id="sSplash" class="scr">
   <div class="sp-orb"><ion-icon name="water" role="img" class="md hydrated"><template shadowrootmode="open"><div class="icon-inner"><svg xmlns="http://www.w3.org/2000/svg" class="ionicon s-ion-icon" viewBox="0 0 512 512"><path d="M265.12 60.12a12 12 0 00-18.23 0C215.23 97.15 112 225.17 112 320c0 88.37 55.64 144 144 144s144-55.63 144-144c0-94.83-103.23-222.85-134.88-259.88zM272 412a12 12 0 01-11.34-16 11.89 11.89 0 0111.41-8A60.06 60.06 0 00332 328.07a11.89 11.89 0 018-11.41A12 12 0 01356 328a84.09 84.09 0 01-84 84z"></path></svg></div></template></ion-icon></div>
   <div class="sp-kicker">PRC Licensed Reviewer</div>
   <h1 class="sp-h1">Master<br>Plumber<br>Reviewer</h1>
@@ -930,7 +930,7 @@ a.res-open-btn{display:flex;align-items:center;justify-content:center;gap:8px;wi
     <div class="prc-tag">🎓 Referred by a professor or review center? Get up to 30% off.</div>
     <button class="btn btn-primary btn-lg btn-block" data-action="goTo" data-args="sSignIn">Sign In to Account</button>
     <button class="btn btn-outline btn-lg btn-block" data-action="goTo" data-args="sSignUp">Create Free Account</button>
-    <button class="btn btn-text" data-action="enterGuest">Continue as Guest →</button>
+    <button class="btn btn-text" data-action="enterGuest" style="">Continue as Guest →</button>
   </div>
 </div>
 
@@ -997,12 +997,12 @@ a.res-open-btn{display:flex;align-items:center;justify-content:center;gap:8px;wi
 <!-- ═══════════════════════════════════════
      SCREEN: HOME
      ═══════════════════════════════════════ -->
-<div id="sHome" class="scr">
+<div id="sHome" class="scr on">
   <!-- Home hero -->
   <div class="home-hero" style="margin-top:8px;">
-    <div class="home-tier" id="homeTier">STUDENT REVIEWER</div>
-    <div class="home-greet" id="homeGreet">Good morning, Reviewer!</div>
-    <div class="home-sub" id="homeSub">Free Member · 1 free exam per category</div>
+    <div class="home-tier" id="homeTier">GUEST MODE</div>
+    <div class="home-greet" id="homeGreet">Good afternoon, Guest!</div>
+    <div class="home-sub" id="homeSub">Guest mode · Sign in to save progress &amp; earn</div>
     <div class="home-streak">
       <div class="streak-ico">🔥</div>
       <div><div class="streak-val" id="streakVal">0</div><div class="streak-lbl">Day Streak</div></div>
@@ -1012,7 +1012,7 @@ a.res-open-btn{display:flex;align-items:center;justify-content:center;gap:8px;wi
   </div>
 
   <!-- Mock exam banner -->
-  <div class="mock-banner" id="mockBanner">
+  <div class="mock-banner" id="mockBanner" style="display: none;">
     <div class="mock-ico">📋</div>
     <div>
       <div class="mock-title">Mock Board Exam</div>
@@ -1024,20 +1024,133 @@ a.res-open-btn{display:flex;align-items:center;justify-content:center;gap:8px;wi
   </div>
 
   <!-- Guest / Free user promo card — rendered dynamically by renderHome() -->
-  <div id="promoArea"></div>
+  <div id="promoArea">
+      <div class="guest-promo">
+        <div class="guest-promo-top">
+          <div class="guest-promo-eyebrow">🔒 Guest Preview</div>
+          <div class="guest-promo-title">You're Missing<br>a Lot Right Now</div>
+          <div class="guest-promo-sub">Create a free account or subscribe to unlock everything you need to pass the board exam.</div>
+          <div class="locked-list">
+            <div class="locked-item unlocked">
+              <div class="locked-ico">✅</div>
+              <div class="locked-txt">Level 1 of each category</div>
+              <span class="unlocked-badge">FREE</span>
+            </div>
+            <div class="locked-item">
+              <div class="locked-ico">🔒</div>
+              <div class="locked-txt">Levels 2–15 per category (56 exams)</div>
+              <span class="locked-badge">LOCKED</span>
+            </div>
+            <div class="locked-item">
+              <div class="locked-ico">🔒</div>
+              <div class="locked-txt">Mock Board Exam — 100 questions, timed</div>
+              <span class="locked-badge">LOCKED</span>
+            </div>
+            <div class="locked-item">
+              <div class="locked-ico">🔒</div>
+              <div class="locked-txt">Score analytics &amp; weak topic detection</div>
+              <span class="locked-badge">LOCKED</span>
+            </div>
+            <div class="locked-item">
+              <div class="locked-ico">🔒</div>
+              <div class="locked-txt">Progress saving &amp; exam history</div>
+              <span class="locked-badge">LOCKED</span>
+            </div>
+            <div class="locked-item">
+              <div class="locked-ico">🔒</div>
+              <div class="locked-txt">Referral earnings &amp; commissions</div>
+              <span class="locked-badge">LOCKED</span>
+            </div>
+          </div>
+          <div style="display:flex;gap:10px;">
+            <button class="btn btn-primary btn-md" style="flex:1;" data-action="goTo" data-args="sSignUp">Create Free Account</button>
+            <button class="btn btn-outline btn-md" style="flex:1;" data-action="goTo" data-args="sSignIn">Sign In</button>
+          </div>
+        </div>
+        <div class="promo-price-strip">
+          <div>
+            <div class="promo-price-label">Unlock everything for</div>
+            <div class="promo-price-val">from ₱199</div>
+            <div class="promo-price-sub">/month · 6 &amp; 12-month plans available · use a referral code for up to 30% off</div>
+          </div>
+          <button class="btn btn-gold btn-md" data-action="goTo" data-args="sSignUp">Get Full Access →</button>
+        </div>
+      </div></div>
 
   <!-- Course selector tabs -->
-  <div class="course-tabs" id="courseTabs"></div>
+  <div class="course-tabs" id="courseTabs" style="display: none;"></div>
 
   <div class="sec" id="catSectionTitle">Exam Categories</div>
   <!-- Dynamic category grid — populated by renderCourseNav() -->
-  <div class="cat-grid" id="catGrid"></div>
+  <div class="cat-grid" id="catGrid"><div class="cat-card" data-action="openCat" data-args="Plumbing Code">
+      <div class="cat-ico"><span style="font-size:22px;">📖</span></div>
+      <div class="cat-nm">Plumbing Code</div>
+      <div class="cat-meta">15 levels ready · tap to review</div>
+      <div class="cat-progress">
+        <div class="cat-pct">Level 1 / auto</div>
+        <div class="rail"><div class="fill" style="width:NaN%;"></div></div>
+      </div>
+    </div><div class="cat-card" data-action="openCat" data-args="Plumbing Arithmetic">
+      <div class="cat-ico"><span style="font-size:22px;">🔢</span></div>
+      <div class="cat-nm">Plumbing Arithmetic</div>
+      <div class="cat-meta">15 levels ready · tap to review</div>
+      <div class="cat-progress">
+        <div class="cat-pct">Level 1 / auto</div>
+        <div class="rail"><div class="fill" style="width:NaN%;"></div></div>
+      </div>
+    </div><div class="cat-card" data-action="openCat" data-args="Sanitation &amp; Design">
+      <div class="cat-ico"><span style="font-size:22px;">🏗️</span></div>
+      <div class="cat-nm">Sanitation &amp; Design</div>
+      <div class="cat-meta">30 levels ready · tap to review</div>
+      <div class="cat-progress">
+        <div class="cat-pct">Level 1 / auto</div>
+        <div class="rail"><div class="fill" style="width:NaN%;"></div></div>
+      </div>
+    </div><div class="cat-card" data-action="openCat" data-args="Practical Problems">
+      <div class="cat-ico"><span style="font-size:22px;">🔨</span></div>
+      <div class="cat-nm">Practical Problems</div>
+      <div class="cat-meta">15 levels ready · tap to review</div>
+      <div class="cat-progress">
+        <div class="cat-pct">Level 1 / auto</div>
+        <div class="rail"><div class="fill" style="width:NaN%;"></div></div>
+      </div>
+    </div><div class="cat-card" data-action="openCat" data-args="Tools">
+      <div class="cat-ico"><span style="font-size:22px;">🛠️</span></div>
+      <div class="cat-nm">Tools</div>
+      <div class="cat-meta">4 levels ready · tap to review</div>
+      <div class="cat-progress">
+        <div class="cat-pct">Level 1 / auto</div>
+        <div class="rail"><div class="fill" style="width:NaN%;"></div></div>
+      </div>
+    </div><div class="cat-card" data-action="openCat" data-args="Symbols">
+      <div class="cat-ico"><span style="font-size:22px;">🔣</span></div>
+      <div class="cat-nm">Symbols</div>
+      <div class="cat-meta">4 levels ready · tap to review</div>
+      <div class="cat-progress">
+        <div class="cat-pct">Level 1 / auto</div>
+        <div class="rail"><div class="fill" style="width:NaN%;"></div></div>
+      </div>
+    </div><div class="cat-card" data-action="openCat" data-args="Diagrams">
+      <div class="cat-ico"><span style="font-size:22px;">📐</span></div>
+      <div class="cat-nm">Diagrams</div>
+      <div class="cat-meta">1 levels ready · tap to review</div>
+      <div class="cat-progress">
+        <div class="cat-pct">Level 1 / auto</div>
+        <div class="rail"><div class="fill" style="width:NaN%;"></div></div>
+      </div>
+    </div><div class="cat-card" data-action="openCat" data-args="Random">
+      <div class="cat-ico"><span style="font-size:22px;">🎲</span></div>
+      <div class="cat-nm">Random</div>
+      <div class="cat-meta">14 levels ready · tap to review</div>
+      <div class="cat-progress">
+        <div class="cat-pct">Level 1 / auto</div>
+        <div class="rail"><div class="fill" style="width:NaN%;"></div></div>
+      </div>
+    </div></div>
 
   <!-- Weak topics -->
   <div class="sec" style="font-size:16px;">⚠️ Weak Topics Detected</div>
-  <div id="weakTopics" class="card" style="margin-bottom:20px;">
-    <div style="font-size:13px;color:var(--t2);text-align:center;padding:10px;">Take more exams to detect weak topics.</div>
-  </div>
+  <div id="weakTopics" class="card" style="margin-bottom:20px;"><div style="display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid var(--border);"><span style="font-size:13px;">Plumbing Code</span><span style="font-family:Space Mono,monospace;font-size:12px;color:var(--red);">0% avg</span></div></div>
 </div>
 
 <!-- ═══════════════════════════════════════
@@ -1046,7 +1159,7 @@ a.res-open-btn{display:flex;align-items:center;justify-content:center;gap:8px;wi
 <div id="sCatLevels" class="scr">
   <div class="topbar">
     <button class="topbar-back btn" data-action="goBack"><ion-icon name="chevron-back-outline" role="img" class="md hydrated"><template shadowrootmode="open"><div class="icon-inner"><svg xmlns="http://www.w3.org/2000/svg" class="ionicon s-ion-icon" viewBox="0 0 512 512"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="48" d="M328 112L184 256l144 144" class="ionicon-fill-none"></path></svg></div></template></ion-icon> Back</button>
-    <div class="topbar-title" id="catTitle">Category</div>
+    <div class="topbar-title" id="catTitle">Plumbing Code</div>
   </div>
   <div class="card" style="margin-bottom:16px;">
     <div class="sec-sm">OVERALL PROGRESS</div>
@@ -1054,7 +1167,7 @@ a.res-open-btn{display:flex;align-items:center;justify-content:center;gap:8px;wi
     <div style="font-size:12px;color:var(--t3);" id="catOverallTxt">0 / 15 levels complete</div>
   </div>
   <div class="sec" style="font-size:16px;">Select Level</div>
-  <div class="level-grid" id="levelGrid"></div>
+  <div class="level-grid" id="levelGrid"><button class="lvl-btn" style="">1<div class="lvl-score"></div></button><button class="lvl-btn locked">2<div class="lvl-score">🔒</div></button><button class="lvl-btn locked">3<div class="lvl-score">🔒</div></button><button class="lvl-btn locked">4<div class="lvl-score">🔒</div></button><button class="lvl-btn locked">5<div class="lvl-score">🔒</div></button><button class="lvl-btn locked">6<div class="lvl-score">🔒</div></button><button class="lvl-btn locked">7<div class="lvl-score">🔒</div></button><button class="lvl-btn locked">8<div class="lvl-score">🔒</div></button><button class="lvl-btn locked">9<div class="lvl-score">🔒</div></button><button class="lvl-btn locked">10<div class="lvl-score">🔒</div></button><button class="lvl-btn locked">11<div class="lvl-score">🔒</div></button><button class="lvl-btn locked">12<div class="lvl-score">🔒</div></button><button class="lvl-btn locked">13<div class="lvl-score">🔒</div></button><button class="lvl-btn locked">14<div class="lvl-score">🔒</div></button><button class="lvl-btn locked">15<div class="lvl-score">🔒</div></button><button class="lvl-btn coming-soon">16<div class="lvl-score" style="font-size:8px;">soon</div></button><button class="lvl-btn coming-soon">17<div class="lvl-score" style="font-size:8px;">soon</div></button><button class="lvl-btn coming-soon">18<div class="lvl-score" style="font-size:8px;">soon</div></button><button class="lvl-btn coming-soon">19<div class="lvl-score" style="font-size:8px;">soon</div></button><button class="lvl-btn coming-soon">20<div class="lvl-score" style="font-size:8px;">soon</div></button><button class="lvl-btn coming-soon">21<div class="lvl-score" style="font-size:8px;">soon</div></button><button class="lvl-btn coming-soon">22<div class="lvl-score" style="font-size:8px;">soon</div></button><button class="lvl-btn coming-soon">23<div class="lvl-score" style="font-size:8px;">soon</div></button><button class="lvl-btn coming-soon">24<div class="lvl-score" style="font-size:8px;">soon</div></button><button class="lvl-btn coming-soon">25<div class="lvl-score" style="font-size:8px;">soon</div></button><button class="lvl-btn coming-soon">26<div class="lvl-score" style="font-size:8px;">soon</div></button><button class="lvl-btn coming-soon">27<div class="lvl-score" style="font-size:8px;">soon</div></button><button class="lvl-btn coming-soon">28<div class="lvl-score" style="font-size:8px;">soon</div></button><button class="lvl-btn coming-soon">29<div class="lvl-score" style="font-size:8px;">soon</div></button><button class="lvl-btn coming-soon">30<div class="lvl-score" style="font-size:8px;">soon</div></button><button class="lvl-btn coming-soon">31<div class="lvl-score" style="font-size:8px;">soon</div></button><button class="lvl-btn coming-soon">32<div class="lvl-score" style="font-size:8px;">soon</div></button><button class="lvl-btn coming-soon">33<div class="lvl-score" style="font-size:8px;">soon</div></button><button class="lvl-btn coming-soon">34<div class="lvl-score" style="font-size:8px;">soon</div></button><button class="lvl-btn coming-soon">35<div class="lvl-score" style="font-size:8px;">soon</div></button><button class="lvl-btn coming-soon">36<div class="lvl-score" style="font-size:8px;">soon</div></button><button class="lvl-btn coming-soon">37<div class="lvl-score" style="font-size:8px;">soon</div></button><button class="lvl-btn coming-soon">38<div class="lvl-score" style="font-size:8px;">soon</div></button><button class="lvl-btn coming-soon">39<div class="lvl-score" style="font-size:8px;">soon</div></button><button class="lvl-btn coming-soon">40<div class="lvl-score" style="font-size:8px;">soon</div></button><button class="lvl-btn coming-soon">41<div class="lvl-score" style="font-size:8px;">soon</div></button><button class="lvl-btn coming-soon">42<div class="lvl-score" style="font-size:8px;">soon</div></button><button class="lvl-btn coming-soon">43<div class="lvl-score" style="font-size:8px;">soon</div></button><button class="lvl-btn coming-soon">44<div class="lvl-score" style="font-size:8px;">soon</div></button><button class="lvl-btn coming-soon">45<div class="lvl-score" style="font-size:8px;">soon</div></button><button class="lvl-btn coming-soon">46<div class="lvl-score" style="font-size:8px;">soon</div></button><button class="lvl-btn coming-soon">47<div class="lvl-score" style="font-size:8px;">soon</div></button><button class="lvl-btn coming-soon">48<div class="lvl-score" style="font-size:8px;">soon</div></button><button class="lvl-btn coming-soon">49<div class="lvl-score" style="font-size:8px;">soon</div></button><button class="lvl-btn coming-soon">50<div class="lvl-score" style="font-size:8px;">soon</div></button></div>
 </div>
 
 <!-- ═══════════════════════════════════════
@@ -1063,16 +1176,16 @@ a.res-open-btn{display:flex;align-items:center;justify-content:center;gap:8px;wi
 <div id="sQuiz" class="scr">
   <div class="quiz-hd">
     <button class="topbar-back btn" data-action="confirmQuit" style="font-size:12px;"><ion-icon name="close-outline" role="img" class="md hydrated"><template shadowrootmode="open"><div class="icon-inner"><svg xmlns="http://www.w3.org/2000/svg" class="ionicon s-ion-icon" viewBox="0 0 512 512"><path stroke-linecap="round" stroke-linejoin="round" d="M368 368L144 144M368 144L144 368" class="ionicon-fill-none ionicon-stroke-width"></path></svg></div></template></ion-icon> Quit</button>
-    <div class="quiz-score-chip" id="qScoreChip">0 / 0</div>
+    <div class="quiz-score-chip" id="qScoreChip">0 / 100</div>
     <div class="quiz-timer" id="qTimer" style="display:none;"><ion-icon name="time-outline" role="img" class="md hydrated"><template shadowrootmode="open"><div class="icon-inner"><svg xmlns="http://www.w3.org/2000/svg" class="ionicon s-ion-icon" viewBox="0 0 512 512"><path d="M256 64C150 64 64 150 64 256s86 192 192 192 192-86 192-192S362 64 256 64z" stroke-miterlimit="10" class="ionicon-fill-none ionicon-stroke-width"></path><path stroke-linecap="round" stroke-linejoin="round" d="M256 128v144h96" class="ionicon-fill-none ionicon-stroke-width"></path></svg></div></template></ion-icon> <span id="qTimerVal">00:00</span></div>
   </div>
   <div class="card">
-    <div class="q-num" id="qNum">QUESTION 1 / 50</div>
+    <div class="q-num" id="qNum">QUESTION 1 / 100</div>
     <div class="prog-rail" style="margin-bottom:20px;"><div class="fill" id="qProgFill" style="width:0%;"></div></div>
-    <div class="q-text" id="qText">Loading question…</div>
+    <div class="q-text" id="qText">A pipe that carries rainwater from the roof to the ground.</div>
     <div id="qImgWrap" style="display:none;">
       <div class="q-img-wrap-inner">
-        <img id="qImg" class="q-img" src="file:///C:/Users/potpot6000/Downloads/MPLE61_emotional_16.html" alt="Question figure" style="cursor:zoom-in;" onclick="openZoom(this.src)">
+        <img id="qImg" class="q-img" src="file:///C:/Users/potpot6000/Downloads/MPLE61_emotional_17.html" alt="Question figure" style="cursor:zoom-in;" onclick="openZoom(this.src)">
         <div id="qImgErr" style="display:none;padding:20px;text-align:center;font-size:12px;color:var(--t3);background:var(--surface-2);border-radius:14px;border:1px dashed var(--border);">
           📷 Image not found — check your <code>images/</code> folder
         </div>
@@ -1084,21 +1197,21 @@ a.res-open-btn{display:flex;align-items:center;justify-content:center;gap:8px;wi
       <div style="font-size:11px;font-weight:700;color:var(--teal);margin-bottom:8px;display:flex;align-items:center;gap:6px;">
         <ion-icon name="calculator-outline" role="img" class="md hydrated"><template shadowrootmode="open"><div class="icon-inner"><svg xmlns="http://www.w3.org/2000/svg" class="ionicon s-ion-icon" viewBox="0 0 512 512"><rect x="112" y="48" width="288" height="416" rx="32" ry="32" stroke-linecap="round" stroke-linejoin="round" class="ionicon-fill-none ionicon-stroke-width"></rect><path stroke-linecap="round" stroke-linejoin="round" d="M160.01 112H352v64H160.01z" class="ionicon-fill-none ionicon-stroke-width"></path><circle cx="168" cy="248" r="24"></circle><circle cx="256" cy="248" r="24"></circle><circle cx="344" cy="248" r="24"></circle><circle cx="168" cy="328" r="24"></circle><circle cx="256" cy="328" r="24"></circle><circle cx="168" cy="408" r="24"></circle><circle cx="256" cy="408" r="24"></circle><rect x="320" y="304" width="48" height="128" rx="24" ry="24"></rect></svg></div></template></ion-icon> Solution
       </div>
-      <img id="solImg" src="file:///C:/Users/potpot6000/Downloads/MPLE61_emotional_16.html" alt="Solution" style="width:100%;border-radius:12px;border:1px solid rgba(20,184,166,.2);cursor:zoom-in;" onclick="openZoom(this.src)">
+      <img id="solImg" src="file:///C:/Users/potpot6000/Downloads/MPLE61_emotional_17.html" alt="Solution" style="width:100%;border-radius:12px;border:1px solid rgba(20,184,166,.2);cursor:zoom-in;" onclick="openZoom(this.src)">
       <div style="font-size:10px;color:var(--t3);text-align:center;margin-top:4px;">Tap to zoom solution</div>
     </div>
-    <div class="choices" id="choices"></div>
+    <div class="choices" id="choices"><button class="choice"><span class="chltr">A</span><span>Soil pipe</span></button><button class="choice"><span class="chltr">B</span><span>Waste pipe</span></button><button class="choice"><span class="chltr">C</span><span>Leader</span></button><button class="choice"><span class="chltr">D</span><span>Vent</span></button></div>
     <div class="explain" id="explain">
       <div class="explain-head"><ion-icon name="bulb-outline" role="img" class="md hydrated"><template shadowrootmode="open"><div class="icon-inner"><svg xmlns="http://www.w3.org/2000/svg" class="ionicon s-ion-icon" viewBox="0 0 512 512"><path d="M304 384v-24c0-29 31.54-56.43 52-76 28.84-27.57 44-64.61 44-108 0-80-63.73-144-144-144a143.6 143.6 0 00-144 144c0 41.84 15.81 81.39 44 108 20.35 19.21 52 46.7 52 76v24M224 480h64M208 432h96M256 384V256" stroke-linecap="round" stroke-linejoin="round" class="ionicon-fill-none ionicon-stroke-width"></path><path d="M294 240s-21.51 16-38 16-38-16-38-16" stroke-linecap="round" stroke-linejoin="round" class="ionicon-fill-none ionicon-stroke-width"></path></svg></div></template></ion-icon> Explanation</div>
       <div id="explainTxt">This answer is correct because…</div>
       <div class="ai-disclaimer">🤖 AI-generated explanation · May occasionally be inaccurate — always verify with your reviewer or professor.</div>
     </div>
     <div class="quiz-nav" style="margin-top:20px;">
-      <button class="btn btn-ghost btn-md" data-action="prevQ" style="flex:1;">← Back</button>
-      <button class="btn btn-primary btn-md" data-action="nextQ" style="flex:2;" id="qNextBtn">Next →</button>
+      <button class="btn btn-ghost btn-md" data-action="prevQ" style="flex:1;">← Levels</button>
+      <button class="btn btn-primary btn-md" data-action="nextQ" style="flex: 2 1 0%;" id="qNextBtn">Next →</button>
     </div>
     <div class="quiz-sub">
-      <button class="btn-danger-ghost btn" data-action="confirmQuit" style="flex:1;">Quit Exam</button>
+      <button class="btn-danger-ghost btn" data-action="confirmQuit" style="flex: 1 1 0%;">Quit Exam</button>
       <button class="btn-success-ghost btn" data-action="finishEarly" style="flex:1;">Finish Early</button>
     </div>
   </div>
@@ -1543,7 +1656,7 @@ a.res-open-btn{display:flex;align-items:center;justify-content:center;gap:8px;wi
 
 <!-- ════ IMAGE ZOOM MODAL ════ -->
 <div id="zoomOverlay" style="display:none;position:fixed;inset:0;z-index:99990;background:rgba(4,7,14,.95);display:none;align-items:center;justify-content:center;padding:20px;" onclick="closeZoom()">
-  <img id="zoomImg" src="file:///C:/Users/potpot6000/Downloads/MPLE61_emotional_16.html" alt="Zoomed" style="max-width:100%;max-height:90vh;border-radius:12px;object-fit:contain;">
+  <img id="zoomImg" src="file:///C:/Users/potpot6000/Downloads/MPLE61_emotional_17.html" alt="Zoomed" style="max-width:100%;max-height:90vh;border-radius:12px;object-fit:contain;">
   <button style="position:absolute;top:20px;right:20px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);color:#fff;width:40px;height:40px;border-radius:99px;font-size:20px;cursor:pointer;" onclick="closeZoom()">✕</button>
 </div>
 
@@ -1568,7 +1681,7 @@ a.res-open-btn{display:flex;align-items:center;justify-content:center;gap:8px;wi
     <div style="text-align:center;margin-top:16px;opacity:.5;">© 2026 Master Plumber Board Reviewer · All rights reserved</div></div></div><!-- .shell -->
 
 <!-- ════ BOTTOM NAV ════ -->
-<nav id="bnav">
+<nav id="bnav" class="visible">
   <button class="bn-item active" id="bn-home" data-action="bnNav" data-args="sHome,bn-home"><ion-icon name="home-outline" role="img" class="md hydrated"><template shadowrootmode="open"><div class="icon-inner"><svg xmlns="http://www.w3.org/2000/svg" class="ionicon s-ion-icon" viewBox="0 0 512 512"><path d="M80 212v236a16 16 0 0016 16h96V328a24 24 0 0124-24h80a24 24 0 0124 24v136h96a16 16 0 0016-16V212" stroke-linecap="round" stroke-linejoin="round" class="ionicon-fill-none ionicon-stroke-width"></path><path d="M480 256L266.89 52c-5-5.28-16.69-5.34-21.78 0L32 256M400 179V64h-48v69" stroke-linecap="round" stroke-linejoin="round" class="ionicon-fill-none ionicon-stroke-width"></path></svg></div></template></ion-icon><span>Home</span><div class="bn-dot"></div></button>
   <button class="bn-item" id="bn-quiz" data-action="bnNav" data-args="sCatLevels,bn-quiz"><ion-icon name="document-text-outline" role="img" class="md hydrated"><template shadowrootmode="open"><div class="icon-inner"><svg xmlns="http://www.w3.org/2000/svg" class="ionicon s-ion-icon" viewBox="0 0 512 512"><path d="M416 221.25V416a48 48 0 01-48 48H144a48 48 0 01-48-48V96a48 48 0 0148-48h98.75a32 32 0 0122.62 9.37l141.26 141.26a32 32 0 019.37 22.62z" stroke-linejoin="round" class="ionicon-fill-none ionicon-stroke-width"></path><path d="M256 56v120a32 32 0 0032 32h120M176 288h160M176 368h160" stroke-linecap="round" stroke-linejoin="round" class="ionicon-fill-none ionicon-stroke-width"></path></svg></div></template></ion-icon><span>Quiz</span><div class="bn-dot"></div></button>
   <button class="bn-item" id="bn-lib" data-action="bnNav" data-args="sLibrary,bn-lib"><ion-icon name="library-outline" role="img" class="md hydrated"><template shadowrootmode="open"><div class="icon-inner"><svg xmlns="http://www.w3.org/2000/svg" class="ionicon s-ion-icon" viewBox="0 0 512 512"><rect x="32" y="96" width="64" height="368" rx="16" ry="16" stroke-linejoin="round" class="ionicon-fill-none ionicon-stroke-width"></rect><path stroke-linecap="round" stroke-linejoin="round" d="M112 224h128M112 400h128" class="ionicon-fill-none ionicon-stroke-width"></path><rect x="112" y="160" width="128" height="304" rx="16" ry="16" stroke-linejoin="round" class="ionicon-fill-none ionicon-stroke-width"></rect><rect x="256" y="48" width="96" height="416" rx="16" ry="16" stroke-linejoin="round" class="ionicon-fill-none ionicon-stroke-width"></rect><path d="M422.46 96.11l-40.4 4.25c-11.12 1.17-19.18 11.57-17.93 23.1l34.92 321.59c1.26 11.53 11.37 20 22.49 18.84l40.4-4.25c11.12-1.17 19.18-11.57 17.93-23.1L445 115c-1.31-11.58-11.42-20.06-22.54-18.89z" stroke-linejoin="round" class="ionicon-fill-none ionicon-stroke-width"></path></svg></div></template></ion-icon><span>Library</span><div class="bn-dot"></div></button>
@@ -1640,7 +1753,7 @@ a.res-open-btn{display:flex;align-items:center;justify-content:center;gap:8px;wi
     <div class="sheet-sub">Your answers so far will be saved.</div>
     <div style="display:flex;gap:10px;margin-top:8px;">
       <button class="btn btn-ghost btn-lg" style="flex:1;" data-action="closeSheet" data-args="quitOverlay">Keep Going</button>
-      <button class="btn btn-lg" style="flex:1;background:var(--red);color:#fff;border:none;box-shadow:0 8px 20px rgba(244,63,94,0.3);border-radius:var(--r);" data-action="doQuit">Exit Exam</button>
+      <button class="btn btn-lg" style="flex: 1 1 0%; background: var(--red); color: rgb(255, 255, 255); border: none; box-shadow: rgba(244, 63, 94, 0.3) 0px 8px 20px; border-radius: var(--r);" data-action="doQuit">Exit Exam</button>
     </div>
   </div>
 </div>
@@ -6387,7 +6500,6 @@ async function imgToBase64(src){
     return new Promise(resolve=>{
       const reader = new FileReader();
       reader.onloadend = () => {
-        // Strip the data:image/...;base64, prefix
         const b64 = reader.result.split(',')[1];
         resolve({data: b64, mediaType: blob.type||'image/png'});
       };
@@ -6395,6 +6507,59 @@ async function imgToBase64(src){
       reader.readAsDataURL(blob);
     });
   }catch(e){ return null; }
+}
+
+/* Generate a rich local explanation when the API is unavailable */
+function generateLocalExplanation(q, userAnswerIdx){
+  const choiceList = q.choices||q.options||[];
+  const correctIdx = q.a!==undefined ? q.a : (q.answerIndex||0);
+  const correct    = choiceList[correctIdx]||'';
+  const userAns    = choiceList[userAnswerIdx]||'';
+  const isCorrect  = userAnswerIdx === correctIdx;
+  const staticExp  = q.explain||'';
+
+  // Use static explanation if it exists
+  if(staticExp && staticExp.length > 20){
+    return staticExp;
+  }
+
+  // Build a structured explanation from the question data
+  let explanation = '';
+
+  if(isCorrect){
+    explanation = `The correct answer is "${correct}." `;
+    // Add context based on question keywords
+    const qLower = q.q.toLowerCase();
+    if(qLower.includes('minimum')||qLower.includes('maximum')){
+      explanation += `This is the code-specified ${qLower.includes('minimum')?'minimum':'maximum'} requirement per the National Plumbing Code of the Philippines (NPCP). Remember these dimensional limits — they are frequently tested on the board exam.`;
+    } else if(qLower.includes('trap')||qLower.includes('vent')||qLower.includes('drain')){
+      explanation += `The NPCP specifies this requirement to ensure proper drainage flow and prevent sewer gas from entering occupied spaces. Understanding trap and vent sizing is essential for the board exam.`;
+    } else if(qLower.includes('septic')||qLower.includes('cesspool')||qLower.includes('sewage')){
+      explanation += `The NPCP regulates sewage disposal systems to protect public health and groundwater. This specific requirement ensures safe separation and treatment of waste.`;
+    } else if(qLower.includes('water supply')||qLower.includes('service pipe')||qLower.includes('pressure')){
+      explanation += `Water supply system requirements in the NPCP are designed to ensure adequate pressure and flow rate to all fixtures. This code provision protects public health by maintaining potable water quality.`;
+    } else if(qLower.includes('fixture unit')||qLower.includes('wsfu')||qLower.includes('dfu')){
+      explanation += `Fixture unit values are used to size drainage and supply piping. The NPCP assigns specific fixture unit values to each type of plumbing fixture based on its flow rate and use frequency.`;
+    } else if(qLower.includes('slope')||qLower.includes('grade')||qLower.includes('fall')){
+      explanation += `Proper slope ensures self-cleansing velocity in horizontal drain pipes, preventing solids from accumulating inside the pipe. The NPCP specifies minimum slope requirements based on pipe diameter.`;
+    } else {
+      explanation += `This is a core requirement under the National Plumbing Code of the Philippines. Mastering these provisions is critical for the Master Plumber Licensure Examination.`;
+    }
+  } else {
+    explanation = `The correct answer is "${correct}," not "${userAns}." `;
+    if(staticExp){
+      explanation += staticExp;
+    } else {
+      const qLower = q.q.toLowerCase();
+      if(qLower.includes('minimum')||qLower.includes('maximum')){
+        explanation += `"${userAns}" does not match the NPCP-specified ${qLower.includes('minimum')?'minimum':'maximum'} value for this requirement. Review the relevant tables and sections of the National Plumbing Code for the correct dimensional limits.`;
+      } else {
+        explanation += `"${userAns}" is a common distractor on the board exam, but it does not apply here. Study the specific NPCP provisions that govern this type of situation and compare each option carefully.`;
+      }
+    }
+  }
+
+  return explanation;
 }
 
 async function getAIExplanation(q, userAnswerIdx){
@@ -6407,63 +6572,48 @@ async function getAIExplanation(q, userAnswerIdx){
   const hasImage    = !!(q.img||q.image);
   const imgSrc      = hasImage ? (q.img||q.image).replace(/ /g,'%20') : '';
 
-  // Show loading state immediately
   const expEl = document.getElementById('explain');
   const txtEl = document.getElementById('explainTxt');
   expEl.classList.add('on');
 
-  const loadingMsg = hasImage
-    ? `<div style="opacity:.5;font-size:12px;display:flex;align-items:center;gap:6px;"><ion-icon name="scan-outline" style="animation:spin 1s linear infinite;"></ion-icon> Scanning image &amp; generating explanation…</div>`
-    : `<div style="opacity:.5;font-size:12px;display:flex;align-items:center;gap:6px;"><ion-icon name="reload-outline" style="animation:spin 1s linear infinite;"></ion-icon> Generating explanation…</div>`;
-
-  txtEl.innerHTML = staticExp
-    ? `<div style="margin-bottom:10px;font-weight:600;">${staticExp}</div>${loadingMsg}`
-    : loadingMsg;
+  // Show immediate local explanation while AI loads
+  const localExp = generateLocalExplanation(q, userAnswerIdx);
+  txtEl.innerHTML = `
+    <div id="localExpText" style="white-space:pre-line;line-height:1.7;font-size:13px;margin-bottom:8px;">${localExp}</div>
+    <div id="aiLoadingIndicator" style="opacity:.5;font-size:11px;display:flex;align-items:center;gap:6px;">
+      <ion-icon name="${hasImage?'scan-outline':'sparkles-outline'}" style="animation:spin 1.2s linear infinite;"></ion-icon>
+      ${hasImage?'AI scanning image for deeper explanation…':'AI generating deeper explanation…'}
+    </div>`;
 
   try{
-    // ── Build message content ──────────────────────────────────
-    // Text part of the prompt
-    const promptText = `You are an expert Master Plumber board exam tutor in the Philippines. A student just answered a board exam question.
+    const promptText = `You are an expert Master Plumber board exam tutor in the Philippines. Be highly educational and specific.
 
 QUESTION: "${q.q}"
 CHOICES: ${choiceList.map((c,i)=>`${['A','B','C','D'][i]}) ${c}`).join(' | ')}
-CORRECT ANSWER: ${correct}
-STUDENT ANSWERED: ${userAns} — ${isCorrect?'✓ CORRECT':'✗ WRONG'}
-${staticExp?`\nEXISTING EXPLANATION: ${staticExp}`:''}
+CORRECT ANSWER: "${correct}"
+STUDENT ANSWERED: "${userAns}" — ${isCorrect?'CORRECT ✓':'WRONG ✗'}
+${staticExp?`STATIC EXPLANATION PROVIDED: ${staticExp}`:''}
 
-Your task:
-1. EXPLAIN in 2-3 sentences why "${correct}" is the correct answer. Cite the specific section of the National Plumbing Code of the Philippines (NPCP), Philippine Electrical Code, or relevant PRC standard if applicable.
-2. If the student was WRONG, explain in 1 sentence why "${userAns}" is incorrect.
-${hasImage?'3. The question includes a figure/image. Describe what is shown in the image and how it relates to the correct answer.':''}
+Write a clear, educational explanation with these parts:
+${isCorrect
+  ? `- Affirm the answer and explain the REASON it is correct (the principle, not just the fact)
+- Cite the specific NPCP section, table number, or PRC standard (e.g. "Per NPCP Section 1104.2..." or "As stated in Table 702.1...")
+- Give one practical real-world application or memory tip to help the student retain this`
+  : `- State clearly that "${correct}" is the correct answer
+- Explain WHY "${correct}" is correct — the underlying principle or code basis
+- Explain specifically why "${userAns}" is wrong — what it actually refers to or why it does not apply here
+- Cite the NPCP section or standard (e.g. "Per NPCP Section 904.1...")`
+}
+${hasImage?`- The question has a figure. Describe what is shown and how it directly relates to the answer.`:''}
 
-Rules:
-- Be educational and encouraging, not just confirmatory
-- Use simple language a student can understand
-- Mention the specific code section, table, or principle when possible (e.g., "Per NPCP Section 904.1..." or "Table 706-1...")
-- Format as flowing paragraphs, no bullet points, no numbered labels, no markdown symbols
-- Keep total response under 150 words`;
+Style rules: flowing paragraph form, no bullet points, no numbered labels, no markdown. Be encouraging. Maximum 180 words.`;
 
-    // ── Build message array — add image if present ─────────────
     let messageContent;
-
     if(hasImage){
       const imgData = await imgToBase64(imgSrc);
-      if(imgData){
-        messageContent = [
-          {
-            type: 'image',
-            source: {
-              type:       'base64',
-              media_type: imgData.mediaType,
-              data:        imgData.data,
-            }
-          },
-          { type: 'text', text: promptText }
-        ];
-      } else {
-        // Image failed to load — add a note to the prompt instead
-        messageContent = promptText + '\n\n(Note: The question has an image but it could not be loaded. Please explain based on the question text alone.)';
-      }
+      messageContent = imgData
+        ? [{type:'image',source:{type:'base64',media_type:imgData.mediaType,data:imgData.data}},{type:'text',text:promptText}]
+        : promptText + '\n\n(Image could not be loaded — explain from question text only.)';
     } else {
       messageContent = promptText;
     }
@@ -6472,32 +6622,40 @@ Rules:
       method:  'POST',
       headers: {'Content-Type':'application/json'},
       body: JSON.stringify({
-        model:      'claude-sonnet-4-20250514',
-        max_tokens: 400,
-        messages:   [{ role:'user', content: messageContent }]
+        model:      'claude-sonnet-4-6',
+        max_tokens: 450,
+        messages:   [{role:'user', content: messageContent}]
       })
     });
 
-    const data    = await res.json();
-    const aiText  = data.content?.[0]?.text||'';
+    if(!res.ok){
+      const errData = await res.json().catch(()=>({}));
+      console.warn('AI explanation API error:', res.status, errData);
+      // Remove loading indicator, keep local explanation
+      document.getElementById('aiLoadingIndicator')?.remove();
+      return;
+    }
 
-    if(aiText){
-      // Show image scan badge if image was analyzed
+    const data   = await res.json();
+    const aiText = data.content?.[0]?.text||'';
+
+    if(aiText && aiText.length > 20){
       const imgBadge = (hasImage && Array.isArray(messageContent))
-        ? `<div style="display:inline-flex;align-items:center;gap:5px;background:rgba(99,102,241,.1);border:1px solid rgba(99,102,241,.2);border-radius:99px;padding:3px 10px;font-size:10px;color:var(--indigo);margin-bottom:10px;"><ion-icon name="scan-outline"></ion-icon> Image analyzed by AI</div><br>`
+        ? `<div style="display:inline-flex;align-items:center;gap:5px;background:rgba(99,102,241,.1);border:1px solid rgba(99,102,241,.2);border-radius:99px;padding:3px 10px;font-size:10px;color:var(--indigo);margin-bottom:10px;"><ion-icon name="scan-outline"></ion-icon> Image analyzed by AI</div>`
         : '';
-
+      // Replace entire content with richer AI explanation
       txtEl.innerHTML = `
-        ${staticExp?`<div style="margin-bottom:10px;font-weight:600;color:var(--t1);">${staticExp}</div>`:''}
         ${imgBadge}
-        <div style="white-space:pre-line;line-height:1.7;font-size:13px;">${aiText}</div>`;
+        <div style="white-space:pre-line;line-height:1.75;font-size:13px;">${aiText}</div>`;
+    } else {
+      // AI returned empty — remove loading indicator, keep local
+      document.getElementById('aiLoadingIndicator')?.remove();
     }
 
   }catch(err){
-    // Graceful fallback
-    txtEl.innerHTML = staticExp
-      ? `<div style="font-weight:600;">${staticExp}</div>`
-      : `<div>The correct answer is <strong>${correct}</strong>. Review the relevant sections of the National Plumbing Code of the Philippines for more details.</div>`;
+    console.warn('AI explanation error:', err.message);
+    // Remove loading indicator — local explanation is already visible
+    document.getElementById('aiLoadingIndicator')?.remove();
   }
 }
 
