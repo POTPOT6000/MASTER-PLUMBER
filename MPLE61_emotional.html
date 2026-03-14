@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- saved from url=(0062)file:///C:/Users/potpot6000/Downloads/MPLE61_emotional_17.html -->
+<!-- saved from url=(0062)file:///C:/Users/potpot6000/Downloads/MPLE61_emotional_18.html -->
 <html lang="en" class="hydrated"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <style data-styles="">ion-icon{visibility:hidden}.hydrated{visibility:inherit}</style>
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
@@ -11,8 +11,8 @@
 <link rel="manifest" href="file:///C:/Users/potpot6000/Downloads/manifest.json">
 <link rel="apple-touch-icon" href="file:///C:/Users/potpot6000/Downloads/img/icon-192.png">
 <title id="appTitle">Master Plumber — Board Reviewer</title>
-<script type="module" src="./Master Plumber — Board Reviewer111_files/ionicons.esm.js.download"></script>
-<link href="./Master Plumber — Board Reviewer111_files/css2" rel="stylesheet">
+<script type="module" src="./Master Plumber — Board Reviewer99_files/ionicons.esm.js.download"></script>
+<link href="./Master Plumber — Board Reviewer99_files/css2" rel="stylesheet">
 <style>
 /* ════════════════════════════════════════════════════════════════
    MASTER PLUMBER REVIEWER — EMOTIONAL DESIGN SYSTEM
@@ -887,13 +887,142 @@ a.res-open-btn{display:flex;align-items:center;justify-content:center;gap:8px;wi
 
 /* Image zoom */
 #zoomOverlay{cursor:zoom-out;}
+
+/* ════ DAILY CHALLENGE BANNER ════ */
+.daily-banner{
+  display:flex;align-items:center;gap:14px;
+  background:linear-gradient(135deg,rgba(245,158,11,.12),rgba(251,191,36,.06));
+  border:1px solid rgba(245,158,11,.25);border-radius:var(--r-lg);
+  padding:14px 16px;margin-bottom:20px;cursor:pointer;
+  transition:all .22s;
+}
+.daily-banner:hover{border-color:rgba(245,158,11,.5);transform:translateY(-2px);}
+.daily-ico{font-size:26px;flex-shrink:0;}
+.daily-txt{flex:1;}
+.daily-title{font-weight:700;font-size:14px;color:var(--amber);}
+.daily-sub{font-size:11px;color:var(--t3);margin-top:2px;}
+.daily-badge{
+  font-family:'Space Mono',monospace;font-size:9px;font-weight:700;
+  background:var(--amber);color:#1a0800;padding:3px 8px;border-radius:99px;
+  animation:pulse 2s infinite;flex-shrink:0;
+}
+.daily-badge.done{background:var(--green);color:#001a0a;animation:none;}
+
+/* ════ XP FLOAT ANIMATION ════ */
+.xp-float{
+  position:fixed;font-family:'Space Mono',monospace;font-size:16px;
+  font-weight:700;color:var(--amber);pointer-events:none;z-index:99997;
+  text-shadow:0 2px 8px rgba(245,158,11,.4);
+  animation:xpRise 1.2s cubic-bezier(.22,1,.36,1) forwards;
+}
+@keyframes xpRise{
+  0%{opacity:1;transform:translateY(0) scale(1);}
+  70%{opacity:1;transform:translateY(-60px) scale(1.1);}
+  100%{opacity:0;transform:translateY(-90px) scale(.8);}
+}
+
+/* ════ STREAK MILESTONE POPUP ════ */
+.streak-popup{
+  position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);
+  z-index:99996;text-align:center;pointer-events:none;
+  animation:streakPop .6s cubic-bezier(.34,1.56,.64,1) forwards;
+}
+@keyframes streakPop{
+  0%{opacity:0;transform:translate(-50%,-50%) scale(.5);}
+  100%{opacity:1;transform:translate(-50%,-50%) scale(1);}
+}
+
+/* ════ ENHANCED RESULTS ════ */
+.res-filter-row{display:flex;gap:8px;margin-bottom:12px;flex-wrap:wrap;}
+.res-filter-btn{
+  padding:6px 14px;border-radius:99px;font-size:12px;font-weight:700;
+  border:1px solid var(--border);color:var(--t3);background:transparent;cursor:pointer;
+}
+.res-filter-btn.active{background:var(--blue);color:#fff;border-color:var(--blue);}
+.rev-item.wrong-item{border-color:rgba(244,63,94,.25);background:rgba(244,63,94,.04);}
+.rev-item.correct-item{border-color:rgba(16,185,129,.2);}
+.rev-retry-btn{
+  display:flex;align-items:center;gap:6px;margin-top:10px;
+  background:rgba(59,130,246,.08);border:1px solid var(--border-hi);
+  border-radius:9px;padding:8px 14px;font-size:12px;font-weight:700;
+  color:var(--blue-hi);cursor:pointer;width:100%;justify-content:center;
+}
+
+/* ════ BOOKMARK BUTTON ════ */
+#bookmarkBtn{transition:transform .2s,color .2s;}
+#bookmarkBtn.active{color:var(--amber)!important;transform:scale(1.2);}
+.bm-card{
+  display:flex;align-items:flex-start;gap:14px;
+  background:var(--surface);border:1px solid var(--border);
+  border-radius:var(--r-lg);padding:14px;margin-bottom:10px;
+}
+.bm-q{font-size:13px;font-weight:600;margin-bottom:6px;line-height:1.4;}
+.bm-ans{font-size:12px;color:var(--green);margin-bottom:4px;}
+.bm-meta{font-size:10px;color:var(--t3);}
+
+/* ════ SCORE TREND CHART ════ */
+.trend-wrap{background:var(--surface);border:1px solid var(--border);border-radius:var(--r-lg);padding:14px;margin-bottom:20px;}
+.trend-title{font-size:12px;font-weight:700;color:var(--t2);margin-bottom:10px;text-transform:uppercase;letter-spacing:.5px;}
+.trend-svg{width:100%;overflow:visible;}
+
+/* ════ STUDY TIMER ════ */
+.pomodoro-ring-wrap{position:relative;display:inline-block;}
+.pomodoro-inner{
+  position:absolute;inset:0;display:flex;flex-direction:column;
+  align-items:center;justify-content:center;
+}
+.pomodoro-time{font-family:'Space Mono',monospace;font-size:36px;font-weight:700;line-height:1;}
+.pomodoro-label{font-size:10px;color:var(--t3);letter-spacing:2px;margin-top:4px;}
+.pom-presets{display:flex;gap:8px;justify-content:center;margin-bottom:20px;}
+.pom-preset{
+  padding:8px 20px;border-radius:99px;font-size:12px;font-weight:700;
+  border:1px solid var(--border);color:var(--t3);background:transparent;cursor:pointer;
+}
+.pom-preset.active{background:var(--blue);color:#fff;border-color:var(--blue);}
+
+/* ════ LEADERBOARD ════ */
+.lb-row{
+  display:flex;align-items:center;gap:14px;
+  padding:14px 0;border-bottom:1px solid var(--border);
+}
+.lb-rank{
+  font-family:'Space Mono',monospace;font-size:14px;font-weight:700;
+  width:28px;text-align:center;flex-shrink:0;
+}
+.lb-rank.gold{color:var(--amber);}
+.lb-rank.silver{color:var(--t2);}
+.lb-rank.bronze{color:#b45309;}
+.lb-av{
+  width:38px;height:38px;border-radius:12px;flex-shrink:0;
+  background:linear-gradient(135deg,var(--blue),var(--indigo));
+  display:flex;align-items:center;justify-content:center;
+  font-weight:700;font-size:13px;color:#fff;
+}
+.lb-info{flex:1;}
+.lb-name{font-weight:700;font-size:14px;}
+.lb-sub{font-size:11px;color:var(--t3);margin-top:2px;}
+.lb-val{font-family:'Space Mono',monospace;font-size:14px;font-weight:700;color:var(--blue-hi);}
+.lb-me .lb-name{color:var(--amber);}
+.lb-me .lb-av{background:linear-gradient(135deg,var(--amber),var(--red));}
+
+/* ════ HOME QUICK ACTIONS ════ */
+.quick-actions{display:flex;gap:10px;margin-bottom:20px;overflow-x:auto;padding-bottom:4px;scrollbar-width:none;}
+.quick-actions::-webkit-scrollbar{display:none;}
+.qa-btn{
+  display:flex;flex-direction:column;align-items:center;gap:6px;
+  padding:12px 16px;border-radius:14px;border:1px solid var(--border);
+  background:var(--surface);cursor:pointer;flex-shrink:0;min-width:72px;
+  transition:all .2s;font-size:10px;font-weight:700;color:var(--t2);
+}
+.qa-btn:hover{border-color:var(--border-hi);transform:translateY(-2px);}
+.qa-btn-ico{font-size:22px;}
 </style>
 </head>
 <body data-theme="dark">
 <div class="shell">
 
 <!-- ════ HUD ════ -->
-<div id="hud" class="on">
+<div id="hud" class="">
   <div class="hav" id="hudAv">G</div>
   <div class="hinfo">
     <div class="hnm" id="hudNm">Guest</div>
@@ -915,7 +1044,7 @@ a.res-open-btn{display:flex;align-items:center;justify-content:center;gap:8px;wi
 <!-- ═══════════════════════════════════════
      SCREEN: SPLASH
      ═══════════════════════════════════════ -->
-<div id="sSplash" class="scr">
+<div id="sSplash" class="scr on">
   <div class="sp-orb"><ion-icon name="water" role="img" class="md hydrated"><template shadowrootmode="open"><div class="icon-inner"><svg xmlns="http://www.w3.org/2000/svg" class="ionicon s-ion-icon" viewBox="0 0 512 512"><path d="M265.12 60.12a12 12 0 00-18.23 0C215.23 97.15 112 225.17 112 320c0 88.37 55.64 144 144 144s144-55.63 144-144c0-94.83-103.23-222.85-134.88-259.88zM272 412a12 12 0 01-11.34-16 11.89 11.89 0 0111.41-8A60.06 60.06 0 00332 328.07a11.89 11.89 0 018-11.41A12 12 0 01356 328a84.09 84.09 0 01-84 84z"></path></svg></div></template></ion-icon></div>
   <div class="sp-kicker">PRC Licensed Reviewer</div>
   <h1 class="sp-h1">Master<br>Plumber<br>Reviewer</h1>
@@ -997,7 +1126,7 @@ a.res-open-btn{display:flex;align-items:center;justify-content:center;gap:8px;wi
 <!-- ═══════════════════════════════════════
      SCREEN: HOME
      ═══════════════════════════════════════ -->
-<div id="sHome" class="scr on">
+<div id="sHome" class="scr">
   <!-- Home hero -->
   <div class="home-hero" style="margin-top:8px;">
     <div class="home-tier" id="homeTier">GUEST MODE</div>
@@ -1009,6 +1138,16 @@ a.res-open-btn{display:flex;align-items:center;justify-content:center;gap:8px;wi
       <div style="margin-left:auto;"></div>
       <div style="text-align:right;"><div class="streak-val" id="xpVal">0</div><div class="streak-lbl">Total XP</div></div>
     </div>
+  </div>
+
+  <!-- Daily Challenge Banner -->
+  <div id="dailyChallengeBanner" class="daily-banner" data-action="openDailyChallenge" style="display: flex;">
+    <div class="daily-ico">📅</div>
+    <div class="daily-txt">
+      <div class="daily-title">Daily Challenge</div>
+      <div class="daily-sub">1 question · earn bonus XP · maintains your streak</div>
+    </div>
+    <div id="dailyBadge" class="daily-badge">NEW</div>
   </div>
 
   <!-- Mock exam banner -->
@@ -1080,6 +1219,15 @@ a.res-open-btn{display:flex;align-items:center;justify-content:center;gap:8px;wi
   <!-- Course selector tabs -->
   <div class="course-tabs" id="courseTabs" style="display: none;"></div>
 
+  <!-- Quick Actions -->
+  <div class="quick-actions" id="quickActions">
+    <div class="qa-btn" data-action="openDailyChallenge"><div class="qa-btn-ico">📅</div>Daily</div>
+    <div class="qa-btn" data-action="goTo" data-args="sTimer"><div class="qa-btn-ico">⏱️</div>Timer</div>
+    <div class="qa-btn" data-action="goTo" data-args="sBookmarks"><div class="qa-btn-ico">🔖</div>Saved</div>
+    <div class="qa-btn" data-action="goTo" data-args="sLeaderboard"><div class="qa-btn-ico">🏆</div>Ranks</div>
+    <div class="qa-btn" data-action="startMockExam"><div class="qa-btn-ico">📋</div>Mock</div>
+  </div>
+
   <div class="sec" id="catSectionTitle">Exam Categories</div>
   <!-- Dynamic category grid — populated by renderCourseNav() -->
   <div class="cat-grid" id="catGrid"><div class="cat-card" data-action="openCat" data-args="Plumbing Code">
@@ -1148,6 +1296,14 @@ a.res-open-btn{display:flex;align-items:center;justify-content:center;gap:8px;wi
       </div>
     </div></div>
 
+  <!-- Score trend chart -->
+  <div id="scoreTrendSection" style="display:none;">
+    <div class="trend-wrap">
+      <div class="trend-title">📈 Score Trend — Last 10 Sessions</div>
+      <svg id="trendSvg" class="trend-svg" height="80"></svg>
+    </div>
+  </div>
+
   <!-- Weak topics -->
   <div class="sec" style="font-size:16px;">⚠️ Weak Topics Detected</div>
   <div id="weakTopics" class="card" style="margin-bottom:20px;"><div style="display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid var(--border);"><span style="font-size:13px;">Plumbing Code</span><span style="font-family:Space Mono,monospace;font-size:12px;color:var(--red);">0% avg</span></div></div>
@@ -1167,7 +1323,7 @@ a.res-open-btn{display:flex;align-items:center;justify-content:center;gap:8px;wi
     <div style="font-size:12px;color:var(--t3);" id="catOverallTxt">0 / 15 levels complete</div>
   </div>
   <div class="sec" style="font-size:16px;">Select Level</div>
-  <div class="level-grid" id="levelGrid"><button class="lvl-btn" style="">1<div class="lvl-score"></div></button><button class="lvl-btn locked">2<div class="lvl-score">🔒</div></button><button class="lvl-btn locked">3<div class="lvl-score">🔒</div></button><button class="lvl-btn locked">4<div class="lvl-score">🔒</div></button><button class="lvl-btn locked">5<div class="lvl-score">🔒</div></button><button class="lvl-btn locked">6<div class="lvl-score">🔒</div></button><button class="lvl-btn locked">7<div class="lvl-score">🔒</div></button><button class="lvl-btn locked">8<div class="lvl-score">🔒</div></button><button class="lvl-btn locked">9<div class="lvl-score">🔒</div></button><button class="lvl-btn locked">10<div class="lvl-score">🔒</div></button><button class="lvl-btn locked">11<div class="lvl-score">🔒</div></button><button class="lvl-btn locked">12<div class="lvl-score">🔒</div></button><button class="lvl-btn locked">13<div class="lvl-score">🔒</div></button><button class="lvl-btn locked">14<div class="lvl-score">🔒</div></button><button class="lvl-btn locked">15<div class="lvl-score">🔒</div></button><button class="lvl-btn coming-soon">16<div class="lvl-score" style="font-size:8px;">soon</div></button><button class="lvl-btn coming-soon">17<div class="lvl-score" style="font-size:8px;">soon</div></button><button class="lvl-btn coming-soon">18<div class="lvl-score" style="font-size:8px;">soon</div></button><button class="lvl-btn coming-soon">19<div class="lvl-score" style="font-size:8px;">soon</div></button><button class="lvl-btn coming-soon">20<div class="lvl-score" style="font-size:8px;">soon</div></button><button class="lvl-btn coming-soon">21<div class="lvl-score" style="font-size:8px;">soon</div></button><button class="lvl-btn coming-soon">22<div class="lvl-score" style="font-size:8px;">soon</div></button><button class="lvl-btn coming-soon">23<div class="lvl-score" style="font-size:8px;">soon</div></button><button class="lvl-btn coming-soon">24<div class="lvl-score" style="font-size:8px;">soon</div></button><button class="lvl-btn coming-soon">25<div class="lvl-score" style="font-size:8px;">soon</div></button><button class="lvl-btn coming-soon">26<div class="lvl-score" style="font-size:8px;">soon</div></button><button class="lvl-btn coming-soon">27<div class="lvl-score" style="font-size:8px;">soon</div></button><button class="lvl-btn coming-soon">28<div class="lvl-score" style="font-size:8px;">soon</div></button><button class="lvl-btn coming-soon">29<div class="lvl-score" style="font-size:8px;">soon</div></button><button class="lvl-btn coming-soon">30<div class="lvl-score" style="font-size:8px;">soon</div></button><button class="lvl-btn coming-soon">31<div class="lvl-score" style="font-size:8px;">soon</div></button><button class="lvl-btn coming-soon">32<div class="lvl-score" style="font-size:8px;">soon</div></button><button class="lvl-btn coming-soon">33<div class="lvl-score" style="font-size:8px;">soon</div></button><button class="lvl-btn coming-soon">34<div class="lvl-score" style="font-size:8px;">soon</div></button><button class="lvl-btn coming-soon">35<div class="lvl-score" style="font-size:8px;">soon</div></button><button class="lvl-btn coming-soon">36<div class="lvl-score" style="font-size:8px;">soon</div></button><button class="lvl-btn coming-soon">37<div class="lvl-score" style="font-size:8px;">soon</div></button><button class="lvl-btn coming-soon">38<div class="lvl-score" style="font-size:8px;">soon</div></button><button class="lvl-btn coming-soon">39<div class="lvl-score" style="font-size:8px;">soon</div></button><button class="lvl-btn coming-soon">40<div class="lvl-score" style="font-size:8px;">soon</div></button><button class="lvl-btn coming-soon">41<div class="lvl-score" style="font-size:8px;">soon</div></button><button class="lvl-btn coming-soon">42<div class="lvl-score" style="font-size:8px;">soon</div></button><button class="lvl-btn coming-soon">43<div class="lvl-score" style="font-size:8px;">soon</div></button><button class="lvl-btn coming-soon">44<div class="lvl-score" style="font-size:8px;">soon</div></button><button class="lvl-btn coming-soon">45<div class="lvl-score" style="font-size:8px;">soon</div></button><button class="lvl-btn coming-soon">46<div class="lvl-score" style="font-size:8px;">soon</div></button><button class="lvl-btn coming-soon">47<div class="lvl-score" style="font-size:8px;">soon</div></button><button class="lvl-btn coming-soon">48<div class="lvl-score" style="font-size:8px;">soon</div></button><button class="lvl-btn coming-soon">49<div class="lvl-score" style="font-size:8px;">soon</div></button><button class="lvl-btn coming-soon">50<div class="lvl-score" style="font-size:8px;">soon</div></button></div>
+  <div class="level-grid" id="levelGrid"><button class="lvl-btn" style="">1<div class="lvl-score">0%</div></button><button class="lvl-btn locked">2<div class="lvl-score">🔒</div></button><button class="lvl-btn locked">3<div class="lvl-score">🔒</div></button><button class="lvl-btn locked">4<div class="lvl-score">🔒</div></button><button class="lvl-btn locked">5<div class="lvl-score">🔒</div></button><button class="lvl-btn locked">6<div class="lvl-score">🔒</div></button><button class="lvl-btn locked">7<div class="lvl-score">🔒</div></button><button class="lvl-btn locked">8<div class="lvl-score">🔒</div></button><button class="lvl-btn locked">9<div class="lvl-score">🔒</div></button><button class="lvl-btn locked">10<div class="lvl-score">🔒</div></button><button class="lvl-btn locked">11<div class="lvl-score">🔒</div></button><button class="lvl-btn locked">12<div class="lvl-score">🔒</div></button><button class="lvl-btn locked">13<div class="lvl-score">🔒</div></button><button class="lvl-btn locked">14<div class="lvl-score">🔒</div></button><button class="lvl-btn locked">15<div class="lvl-score">🔒</div></button><button class="lvl-btn coming-soon">16<div class="lvl-score" style="font-size:8px;">soon</div></button><button class="lvl-btn coming-soon">17<div class="lvl-score" style="font-size:8px;">soon</div></button><button class="lvl-btn coming-soon">18<div class="lvl-score" style="font-size:8px;">soon</div></button><button class="lvl-btn coming-soon">19<div class="lvl-score" style="font-size:8px;">soon</div></button><button class="lvl-btn coming-soon">20<div class="lvl-score" style="font-size:8px;">soon</div></button><button class="lvl-btn coming-soon">21<div class="lvl-score" style="font-size:8px;">soon</div></button><button class="lvl-btn coming-soon">22<div class="lvl-score" style="font-size:8px;">soon</div></button><button class="lvl-btn coming-soon">23<div class="lvl-score" style="font-size:8px;">soon</div></button><button class="lvl-btn coming-soon">24<div class="lvl-score" style="font-size:8px;">soon</div></button><button class="lvl-btn coming-soon">25<div class="lvl-score" style="font-size:8px;">soon</div></button><button class="lvl-btn coming-soon">26<div class="lvl-score" style="font-size:8px;">soon</div></button><button class="lvl-btn coming-soon">27<div class="lvl-score" style="font-size:8px;">soon</div></button><button class="lvl-btn coming-soon">28<div class="lvl-score" style="font-size:8px;">soon</div></button><button class="lvl-btn coming-soon">29<div class="lvl-score" style="font-size:8px;">soon</div></button><button class="lvl-btn coming-soon">30<div class="lvl-score" style="font-size:8px;">soon</div></button><button class="lvl-btn coming-soon">31<div class="lvl-score" style="font-size:8px;">soon</div></button><button class="lvl-btn coming-soon">32<div class="lvl-score" style="font-size:8px;">soon</div></button><button class="lvl-btn coming-soon">33<div class="lvl-score" style="font-size:8px;">soon</div></button><button class="lvl-btn coming-soon">34<div class="lvl-score" style="font-size:8px;">soon</div></button><button class="lvl-btn coming-soon">35<div class="lvl-score" style="font-size:8px;">soon</div></button><button class="lvl-btn coming-soon">36<div class="lvl-score" style="font-size:8px;">soon</div></button><button class="lvl-btn coming-soon">37<div class="lvl-score" style="font-size:8px;">soon</div></button><button class="lvl-btn coming-soon">38<div class="lvl-score" style="font-size:8px;">soon</div></button><button class="lvl-btn coming-soon">39<div class="lvl-score" style="font-size:8px;">soon</div></button><button class="lvl-btn coming-soon">40<div class="lvl-score" style="font-size:8px;">soon</div></button><button class="lvl-btn coming-soon">41<div class="lvl-score" style="font-size:8px;">soon</div></button><button class="lvl-btn coming-soon">42<div class="lvl-score" style="font-size:8px;">soon</div></button><button class="lvl-btn coming-soon">43<div class="lvl-score" style="font-size:8px;">soon</div></button><button class="lvl-btn coming-soon">44<div class="lvl-score" style="font-size:8px;">soon</div></button><button class="lvl-btn coming-soon">45<div class="lvl-score" style="font-size:8px;">soon</div></button><button class="lvl-btn coming-soon">46<div class="lvl-score" style="font-size:8px;">soon</div></button><button class="lvl-btn coming-soon">47<div class="lvl-score" style="font-size:8px;">soon</div></button><button class="lvl-btn coming-soon">48<div class="lvl-score" style="font-size:8px;">soon</div></button><button class="lvl-btn coming-soon">49<div class="lvl-score" style="font-size:8px;">soon</div></button><button class="lvl-btn coming-soon">50<div class="lvl-score" style="font-size:8px;">soon</div></button></div>
 </div>
 
 <!-- ═══════════════════════════════════════
@@ -1177,15 +1333,16 @@ a.res-open-btn{display:flex;align-items:center;justify-content:center;gap:8px;wi
   <div class="quiz-hd">
     <button class="topbar-back btn" data-action="confirmQuit" style="font-size:12px;"><ion-icon name="close-outline" role="img" class="md hydrated"><template shadowrootmode="open"><div class="icon-inner"><svg xmlns="http://www.w3.org/2000/svg" class="ionicon s-ion-icon" viewBox="0 0 512 512"><path stroke-linecap="round" stroke-linejoin="round" d="M368 368L144 144M368 144L144 368" class="ionicon-fill-none ionicon-stroke-width"></path></svg></div></template></ion-icon> Quit</button>
     <div class="quiz-score-chip" id="qScoreChip">0 / 100</div>
+    <button class="btn" id="bookmarkBtn" data-action="toggleBookmark" style="font-size:18px;color:var(--t3);padding:4px 8px;" title="Bookmark this question">🔖</button>
     <div class="quiz-timer" id="qTimer" style="display:none;"><ion-icon name="time-outline" role="img" class="md hydrated"><template shadowrootmode="open"><div class="icon-inner"><svg xmlns="http://www.w3.org/2000/svg" class="ionicon s-ion-icon" viewBox="0 0 512 512"><path d="M256 64C150 64 64 150 64 256s86 192 192 192 192-86 192-192S362 64 256 64z" stroke-miterlimit="10" class="ionicon-fill-none ionicon-stroke-width"></path><path stroke-linecap="round" stroke-linejoin="round" d="M256 128v144h96" class="ionicon-fill-none ionicon-stroke-width"></path></svg></div></template></ion-icon> <span id="qTimerVal">00:00</span></div>
   </div>
   <div class="card">
-    <div class="q-num" id="qNum">QUESTION 1 / 100</div>
+    <div class="q-num" id="qNum">QUESTION 1 / 50</div>
     <div class="prog-rail" style="margin-bottom:20px;"><div class="fill" id="qProgFill" style="width:0%;"></div></div>
-    <div class="q-text" id="qText">A pipe that carries rainwater from the roof to the ground.</div>
+    <div class="q-text" id="qText">Loading question…</div>
     <div id="qImgWrap" style="display:none;">
       <div class="q-img-wrap-inner">
-        <img id="qImg" class="q-img" src="file:///C:/Users/potpot6000/Downloads/MPLE61_emotional_17.html" alt="Question figure" style="cursor:zoom-in;" onclick="openZoom(this.src)">
+        <img id="qImg" class="q-img" src="file:///C:/Users/potpot6000/Downloads/MPLE61_emotional_18.html" alt="Question figure" style="cursor:zoom-in;" onclick="openZoom(this.src)">
         <div id="qImgErr" style="display:none;padding:20px;text-align:center;font-size:12px;color:var(--t3);background:var(--surface-2);border-radius:14px;border:1px dashed var(--border);">
           📷 Image not found — check your <code>images/</code> folder
         </div>
@@ -1197,17 +1354,17 @@ a.res-open-btn{display:flex;align-items:center;justify-content:center;gap:8px;wi
       <div style="font-size:11px;font-weight:700;color:var(--teal);margin-bottom:8px;display:flex;align-items:center;gap:6px;">
         <ion-icon name="calculator-outline" role="img" class="md hydrated"><template shadowrootmode="open"><div class="icon-inner"><svg xmlns="http://www.w3.org/2000/svg" class="ionicon s-ion-icon" viewBox="0 0 512 512"><rect x="112" y="48" width="288" height="416" rx="32" ry="32" stroke-linecap="round" stroke-linejoin="round" class="ionicon-fill-none ionicon-stroke-width"></rect><path stroke-linecap="round" stroke-linejoin="round" d="M160.01 112H352v64H160.01z" class="ionicon-fill-none ionicon-stroke-width"></path><circle cx="168" cy="248" r="24"></circle><circle cx="256" cy="248" r="24"></circle><circle cx="344" cy="248" r="24"></circle><circle cx="168" cy="328" r="24"></circle><circle cx="256" cy="328" r="24"></circle><circle cx="168" cy="408" r="24"></circle><circle cx="256" cy="408" r="24"></circle><rect x="320" y="304" width="48" height="128" rx="24" ry="24"></rect></svg></div></template></ion-icon> Solution
       </div>
-      <img id="solImg" src="file:///C:/Users/potpot6000/Downloads/MPLE61_emotional_17.html" alt="Solution" style="width:100%;border-radius:12px;border:1px solid rgba(20,184,166,.2);cursor:zoom-in;" onclick="openZoom(this.src)">
+      <img id="solImg" src="file:///C:/Users/potpot6000/Downloads/MPLE61_emotional_18.html" alt="Solution" style="width:100%;border-radius:12px;border:1px solid rgba(20,184,166,.2);cursor:zoom-in;" onclick="openZoom(this.src)">
       <div style="font-size:10px;color:var(--t3);text-align:center;margin-top:4px;">Tap to zoom solution</div>
     </div>
-    <div class="choices" id="choices"><button class="choice"><span class="chltr">A</span><span>Soil pipe</span></button><button class="choice"><span class="chltr">B</span><span>Waste pipe</span></button><button class="choice"><span class="chltr">C</span><span>Leader</span></button><button class="choice"><span class="chltr">D</span><span>Vent</span></button></div>
+    <div class="choices" id="choices"></div>
     <div class="explain" id="explain">
       <div class="explain-head"><ion-icon name="bulb-outline" role="img" class="md hydrated"><template shadowrootmode="open"><div class="icon-inner"><svg xmlns="http://www.w3.org/2000/svg" class="ionicon s-ion-icon" viewBox="0 0 512 512"><path d="M304 384v-24c0-29 31.54-56.43 52-76 28.84-27.57 44-64.61 44-108 0-80-63.73-144-144-144a143.6 143.6 0 00-144 144c0 41.84 15.81 81.39 44 108 20.35 19.21 52 46.7 52 76v24M224 480h64M208 432h96M256 384V256" stroke-linecap="round" stroke-linejoin="round" class="ionicon-fill-none ionicon-stroke-width"></path><path d="M294 240s-21.51 16-38 16-38-16-38-16" stroke-linecap="round" stroke-linejoin="round" class="ionicon-fill-none ionicon-stroke-width"></path></svg></div></template></ion-icon> Explanation</div>
       <div id="explainTxt">This answer is correct because…</div>
       <div class="ai-disclaimer">🤖 AI-generated explanation · May occasionally be inaccurate — always verify with your reviewer or professor.</div>
     </div>
     <div class="quiz-nav" style="margin-top:20px;">
-      <button class="btn btn-ghost btn-md" data-action="prevQ" style="flex:1;">← Levels</button>
+      <button class="btn btn-ghost btn-md" data-action="prevQ" style="flex:1;">← Back</button>
       <button class="btn btn-primary btn-md" data-action="nextQ" style="flex: 2 1 0%;" id="qNextBtn">Next →</button>
     </div>
     <div class="quiz-sub">
@@ -1243,9 +1400,17 @@ a.res-open-btn{display:flex;align-items:center;justify-content:center;gap:8px;wi
       <div class="trio-stat"><div class="trio-val" id="trioTime">—</div><div class="trio-lbl">Time</div></div>
       <div class="trio-stat"><div class="trio-val" id="trioXP">+0</div><div class="trio-lbl">XP Earned</div></div>
     </div>
-    <div style="max-height:400px;overflow-y:auto;padding-right:4px;" id="resReview"></div>
+    <div class="res-filter-row">
+      <button class="res-filter-btn active" data-action="filterResults" data-args="all">All</button>
+      <button class="res-filter-btn" data-action="filterResults" data-args="wrong">❌ Wrong Only</button>
+      <button class="res-filter-btn" data-action="filterResults" data-args="correct">✅ Correct Only</button>
+    </div>
+    <div id="resReviewWrap" style="max-height:400px;overflow-y:auto;padding-right:4px;">
+      <div id="resReview"></div>
+    </div>
     <div class="res-acts">
       <button class="btn btn-ghost btn-md" data-action="retryQuiz" style="flex:1;">Try Again</button>
+      <button class="btn btn-outline btn-md" id="retryWrongBtn" data-action="retryWrongOnly" style="flex:1;display:none;">Retry Wrong</button>
       <button class="btn btn-primary btn-md" data-action="goTo" data-args="sHome" style="flex:2;">Back Home</button>
     </div>
   </div>
@@ -1399,24 +1564,27 @@ a.res-open-btn{display:flex;align-items:center;justify-content:center;gap:8px;wi
 <div id="sProfile" class="scr">
   <div class="topbar"><div class="topbar-title">My Profile</div></div>
   <div style="text-align:center;margin:20px 0;">
-    <div class="profile-av" id="profAv">MP</div>
-    <div class="profile-nm" id="profNm">Reviewer</div>
-    <div class="profile-email" id="profEmail">—</div>
+    <div class="profile-av" id="profAv">G</div>
+    <div class="profile-nm" id="profNm">Guest</div>
+    <div class="profile-email" id="profEmail">guest@local</div>
     <div style="display:flex;justify-content:center;gap:8px;margin-bottom:20px;">
       <div class="chip chip-blue" id="profType">Reviewer</div>
       <div class="chip chip-amber" id="profTierChip">Free</div>
     </div>
   </div>
-  <div class="menu-row" data-action="goTo" data-args="sEarn"><div class="menu-ico">💰</div><div class="menu-txt">Earnings Dashboard</div><ion-icon class="menu-arr md hydrated" name="chevron-forward-outline" role="img"><template shadowrootmode="open"><div class="icon-inner"><svg xmlns="http://www.w3.org/2000/svg" class="ionicon s-ion-icon" viewBox="0 0 512 512"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="48" d="M184 112l144 144-144 144" class="ionicon-fill-none"></path></svg></div></template></ion-icon></div>
+  <div id="roleVerifyCard" class="role-verify-card student-card"><div class="rvc-ico student">🎓</div><div><div class="rvc-title">Guest</div><div class="rvc-sub">Browsing as a guest. Create an account to save your progress and access all features.</div><div class="rvc-badge student">👤 Guest</div></div></div><div class="menu-row" data-action="goTo" data-args="sEarn" style="display: none;"><div class="menu-ico">💰</div><div class="menu-txt">Earnings Dashboard</div><ion-icon class="menu-arr md hydrated" name="chevron-forward-outline" role="img"><template shadowrootmode="open"><div class="icon-inner"><svg xmlns="http://www.w3.org/2000/svg" class="ionicon s-ion-icon" viewBox="0 0 512 512"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="48" d="M184 112l144 144-144 144" class="ionicon-fill-none"></path></svg></div></template></ion-icon></div>
   <div class="menu-row" id="partnerPortalMenuRow" data-action="goTo" data-args="sPartner" style="display:none;"><div class="menu-ico">📤</div><div class="menu-txt">Partner Portal</div><ion-icon class="menu-arr md hydrated" name="chevron-forward-outline" role="img"><template shadowrootmode="open"><div class="icon-inner"><svg xmlns="http://www.w3.org/2000/svg" class="ionicon s-ion-icon" viewBox="0 0 512 512"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="48" d="M184 112l144 144-144 144" class="ionicon-fill-none"></path></svg></div></template></ion-icon></div>
   <div class="menu-row" data-action="goTo" data-args="sLibrary"><div class="menu-ico">📚</div><div class="menu-txt">Library</div><ion-icon class="menu-arr md hydrated" name="chevron-forward-outline" role="img"><template shadowrootmode="open"><div class="icon-inner"><svg xmlns="http://www.w3.org/2000/svg" class="ionicon s-ion-icon" viewBox="0 0 512 512"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="48" d="M184 112l144 144-144 144" class="ionicon-fill-none"></path></svg></div></template></ion-icon></div>
-  <div class="menu-row" data-action="goTo" data-args="sSub"><div class="menu-ico">⭐</div><div class="menu-txt">Subscription &amp; Upgrade</div><ion-icon class="menu-arr md hydrated" name="chevron-forward-outline" role="img"><template shadowrootmode="open"><div class="icon-inner"><svg xmlns="http://www.w3.org/2000/svg" class="ionicon s-ion-icon" viewBox="0 0 512 512"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="48" d="M184 112l144 144-144 144" class="ionicon-fill-none"></path></svg></div></template></ion-icon></div>
+  <div class="menu-row" data-action="goTo" data-args="sBookmarks"><div class="menu-ico">🔖</div><div class="menu-txt">Bookmarked Questions</div><ion-icon class="menu-arr md hydrated" name="chevron-forward-outline" role="img"><template shadowrootmode="open"><div class="icon-inner"><svg xmlns="http://www.w3.org/2000/svg" class="ionicon s-ion-icon" viewBox="0 0 512 512"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="48" d="M184 112l144 144-144 144" class="ionicon-fill-none"></path></svg></div></template></ion-icon></div>
+  <div class="menu-row" data-action="goTo" data-args="sTimer"><div class="menu-ico">⏱️</div><div class="menu-txt">Study Timer</div><ion-icon class="menu-arr md hydrated" name="chevron-forward-outline" role="img"><template shadowrootmode="open"><div class="icon-inner"><svg xmlns="http://www.w3.org/2000/svg" class="ionicon s-ion-icon" viewBox="0 0 512 512"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="48" d="M184 112l144 144-144 144" class="ionicon-fill-none"></path></svg></div></template></ion-icon></div>
+  <div class="menu-row" data-action="goTo" data-args="sLeaderboard"><div class="menu-ico">🏆</div><div class="menu-txt">Leaderboard</div><ion-icon class="menu-arr md hydrated" name="chevron-forward-outline" role="img"><template shadowrootmode="open"><div class="icon-inner"><svg xmlns="http://www.w3.org/2000/svg" class="ionicon s-ion-icon" viewBox="0 0 512 512"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="48" d="M184 112l144 144-144 144" class="ionicon-fill-none"></path></svg></div></template></ion-icon></div>
+  <div class="menu-row" data-action="goTo" data-args="sSub" style="display: flex;"><div class="menu-ico">⭐</div><div class="menu-txt">Subscription &amp; Upgrade</div><ion-icon class="menu-arr md hydrated" name="chevron-forward-outline" role="img"><template shadowrootmode="open"><div class="icon-inner"><svg xmlns="http://www.w3.org/2000/svg" class="ionicon s-ion-icon" viewBox="0 0 512 512"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="48" d="M184 112l144 144-144 144" class="ionicon-fill-none"></path></svg></div></template></ion-icon></div>
   <div class="menu-row" data-action="goTo" data-args="sStats"><div class="menu-ico">📊</div><div class="menu-txt">My Analytics</div><ion-icon class="menu-arr md hydrated" name="chevron-forward-outline" role="img"><template shadowrootmode="open"><div class="icon-inner"><svg xmlns="http://www.w3.org/2000/svg" class="ionicon s-ion-icon" viewBox="0 0 512 512"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="48" d="M184 112l144 144-144 144" class="ionicon-fill-none"></path></svg></div></template></ion-icon></div>
-  <div class="menu-row" data-action="openRoleUpgradeSheet" id="roleUpgradeRow"><div class="menu-ico">🏅</div><div class="menu-txt">Request Role Upgrade</div><ion-icon class="menu-arr md hydrated" name="chevron-forward-outline" role="img"><template shadowrootmode="open"><div class="icon-inner"><svg xmlns="http://www.w3.org/2000/svg" class="ionicon s-ion-icon" viewBox="0 0 512 512"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="48" d="M184 112l144 144-144 144" class="ionicon-fill-none"></path></svg></div></template></ion-icon></div>
+  <div class="menu-row" data-action="openRoleUpgradeSheet" id="roleUpgradeRow" style="display: flex;"><div class="menu-ico">🏅</div><div class="menu-txt">Request Role Upgrade</div><ion-icon class="menu-arr md hydrated" name="chevron-forward-outline" role="img"><template shadowrootmode="open"><div class="icon-inner"><svg xmlns="http://www.w3.org/2000/svg" class="ionicon s-ion-icon" viewBox="0 0 512 512"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="48" d="M184 112l144 144-144 144" class="ionicon-fill-none"></path></svg></div></template></ion-icon></div>
   <div class="menu-row" data-action="openEditProfile"><div class="menu-ico">✏️</div><div class="menu-txt">Edit Profile</div><ion-icon class="menu-arr md hydrated" name="chevron-forward-outline" role="img"><template shadowrootmode="open"><div class="icon-inner"><svg xmlns="http://www.w3.org/2000/svg" class="ionicon s-ion-icon" viewBox="0 0 512 512"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="48" d="M184 112l144 144-144 144" class="ionicon-fill-none"></path></svg></div></template></ion-icon></div>
   <div class="menu-row" data-action="toggleTheme"><div class="menu-ico">🌙</div><div class="menu-txt">Toggle Theme</div><ion-icon class="menu-arr md hydrated" name="chevron-forward-outline" role="img"><template shadowrootmode="open"><div class="icon-inner"><svg xmlns="http://www.w3.org/2000/svg" class="ionicon s-ion-icon" viewBox="0 0 512 512"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="48" d="M184 112l144 144-144 144" class="ionicon-fill-none"></path></svg></div></template></ion-icon></div>
   <div class="menu-row" id="adminMenuRow" style="display:none;" data-action="goTo" data-args="sAdmin"><div class="menu-ico">🛡️</div><div class="menu-txt">Admin Dashboard</div><ion-icon class="menu-arr md hydrated" name="chevron-forward-outline" role="img"><template shadowrootmode="open"><div class="icon-inner"><svg xmlns="http://www.w3.org/2000/svg" class="ionicon s-ion-icon" viewBox="0 0 512 512"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="48" d="M184 112l144 144-144 144" class="ionicon-fill-none"></path></svg></div></template></ion-icon></div>
-  <div class="menu-row" data-action="doLogout" style="margin-top:8px;"><div class="menu-ico">🚪</div><div class="menu-txt" style="color:var(--red);">Sign Out</div><ion-icon class="menu-arr md hydrated" name="chevron-forward-outline" role="img"><template shadowrootmode="open"><div class="icon-inner"><svg xmlns="http://www.w3.org/2000/svg" class="ionicon s-ion-icon" viewBox="0 0 512 512"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="48" d="M184 112l144 144-144 144" class="ionicon-fill-none"></path></svg></div></template></ion-icon></div>
+  <div class="menu-row" data-action="doLogout" style="margin-top: 8px;"><div class="menu-ico">🚪</div><div class="menu-txt" style="color:var(--red);">Sign Out</div><ion-icon class="menu-arr md hydrated" name="chevron-forward-outline" role="img"><template shadowrootmode="open"><div class="icon-inner"><svg xmlns="http://www.w3.org/2000/svg" class="ionicon s-ion-icon" viewBox="0 0 512 512"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="48" d="M184 112l144 144-144 144" class="ionicon-fill-none"></path></svg></div></template></ion-icon></div>
 </div>
 
 <!-- ═══════════════════════════════════════
@@ -1482,19 +1650,52 @@ a.res-open-btn{display:flex;align-items:center;justify-content:center;gap:8px;wi
 
   <!-- Topic filter tabs -->
   <div class="lib-tabs" id="libTabs">
-    <button class="lib-tab active" data-topic="All" data-action="filterLibTopic" data-args="All">All</button>
-    <button class="lib-tab" data-topic="Plumbing Code" data-action="filterLibTopic" data-args="Plumbing Code">Plumbing Code</button>
+    <button class="lib-tab active" data-topic="All" data-action="filterLibTopic" data-args="All" style="">All</button>
+    <button class="lib-tab" data-topic="Plumbing Code" data-action="filterLibTopic" data-args="Plumbing Code" style="">Plumbing Code</button>
     <button class="lib-tab" data-topic="Arithmetic" data-action="filterLibTopic" data-args="Arithmetic">Arithmetic</button>
-    <button class="lib-tab" data-topic="Sanitation &amp; Design" data-action="filterLibTopic" data-args="Sanitation &amp; Design">Sanitation</button>
-    <button class="lib-tab" data-topic="Practical" data-action="filterLibTopic" data-args="Practical">Practical</button>
-    <button class="lib-tab" data-topic="General" data-action="filterLibTopic" data-args="General">General</button>
+    <button class="lib-tab" data-topic="Sanitation &amp; Design" data-action="filterLibTopic" data-args="Sanitation &amp; Design" style="">Sanitation</button>
+    <button class="lib-tab" data-topic="Practical" data-action="filterLibTopic" data-args="Practical" style="">Practical</button>
+    <button class="lib-tab" data-topic="General" data-action="filterLibTopic" data-args="General" style="">General</button>
   </div>
 
   <!-- Resource grid -->
-  <div id="libGrid"></div>
+  <div id="libGrid"><div style="font-family: Syne, sans-serif; font-size: 16px; font-weight: 700; margin-bottom: 12px; margin-top: 4px;">Plumbing Code</div><div class="res-card" data-action="openResource" data-args="RES-SAMPLE-1">
+        <div class="res-ico link">🔗</div>
+        <div class="res-info">
+          <div class="res-title">National Plumbing Code of the Philippines 2000</div>
+          <div class="res-meta">
+            <span class="res-topic">Plumbing Code</span>
+            <span class="res-type-lbl">External Link</span>
+          </div>
+          <div class="res-desc">Official NSCP plumbing provisions — required reading for the board exam.</div>
+          <div class="res-author">by DPWH / NBCDO</div>
+        </div>
+        </div><div style="font-family: Syne, sans-serif; font-size: 16px; font-weight: 700; margin-bottom: 12px; margin-top: 4px;">Arithmetic</div><div class="res-card" data-action="openResource" data-args="RES-SAMPLE-2">
+        <div class="res-ico notes">📝</div>
+        <div class="res-info">
+          <div class="res-title">Plumbing Arithmetic Review Notes</div>
+          <div class="res-meta">
+            <span class="res-topic">Arithmetic</span>
+            <span class="res-type-lbl">Lecture Notes</span>
+          </div>
+          <div class="res-desc">Formulas and solved examples for common board exam arithmetic problems.</div>
+          <div class="res-author">by Admin</div>
+        </div>
+        </div><div style="font-family: Syne, sans-serif; font-size: 16px; font-weight: 700; margin-bottom: 12px; margin-top: 4px;">Sanitation &amp; Design</div><div class="res-card" data-action="openResource" data-args="RES-SAMPLE-3">
+        <div class="res-ico lecture">🎥</div>
+        <div class="res-info">
+          <div class="res-title">Sanitation &amp; Design Lecture Series</div>
+          <div class="res-meta">
+            <span class="res-topic">Sanitation &amp; Design</span>
+            <span class="res-type-lbl">Lecture / Video</span>
+          </div>
+          <div class="res-desc">Video lecture series covering drainage design, fixture units, and venting systems.</div>
+          <div class="res-author">by Admin</div>
+        </div>
+        </div></div>
 
   <!-- Empty state -->
-  <div id="libEmpty" style="display:none;">
+  <div id="libEmpty" style="display: none;">
     <div class="card" style="text-align:center;padding:48px 24px;">
       <div style="font-size:48px;margin-bottom:16px;">📖</div>
       <div style="font-family:&#39;Syne&#39;,sans-serif;font-size:18px;font-weight:700;margin-bottom:8px;">No Resources Yet</div>
@@ -1654,9 +1855,102 @@ a.res-open-btn{display:flex;align-items:center;justify-content:center;gap:8px;wi
 </div>
 
 
+<!-- ════ DAILY CHALLENGE MODAL ════ -->
+<div id="dailyChallengeOverlay" class="overlay">
+  <div class="sheet">
+    <div class="sheet-handle"></div>
+    <div style="text-align:center;padding:8px 0 16px;">
+      <div style="font-size:40px;margin-bottom:8px;">📅</div>
+      <div class="sheet-title">Daily Challenge</div>
+      <div class="sheet-sub" id="dcDate">Today's question</div>
+    </div>
+    <div id="dcQuestion" class="card" style="margin-bottom:16px;"></div>
+    <div id="dcResult" style="display:none;"></div>
+    <button class="btn btn-ghost btn-md btn-block" style="margin-top:12px;" data-action="closeSheet" data-args="dailyChallengeOverlay">Close</button>
+  </div>
+</div>
+
+<!-- ════ BOOKMARKS SCREEN ════ -->
+<div id="sBookmarks" class="scr">
+  <div class="topbar" style="padding-top:20px;">
+    <button class="topbar-back btn" data-action="goBack"><ion-icon name="chevron-back-outline" role="img" class="md hydrated"><template shadowrootmode="open"><div class="icon-inner"><svg xmlns="http://www.w3.org/2000/svg" class="ionicon s-ion-icon" viewBox="0 0 512 512"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="48" d="M328 112L184 256l144 144" class="ionicon-fill-none"></path></svg></div></template></ion-icon></button>
+    <div class="topbar-title">🔖 Bookmarks</div>
+  </div>
+  <div id="bookmarkList"></div>
+  <div id="bookmarkEmpty" class="card" style="text-align:center;padding:48px 24px;display:none;">
+    <div style="font-size:40px;margin-bottom:12px;">🔖</div>
+    <div style="font-family:&#39;Syne&#39;,sans-serif;font-size:18px;font-weight:700;margin-bottom:8px;">No bookmarks yet</div>
+    <div style="font-size:13px;color:var(--t2);">Tap the 🔖 button during a quiz to save hard questions here.</div>
+  </div>
+</div>
+
+<!-- ════ STUDY TIMER SCREEN ════ -->
+<div id="sTimer" class="scr">
+  <div class="topbar" style="padding-top:20px;">
+    <button class="topbar-back btn" data-action="goBack" style=""><ion-icon name="chevron-back-outline" role="img" class="md hydrated"><template shadowrootmode="open"><div class="icon-inner"><svg xmlns="http://www.w3.org/2000/svg" class="ionicon s-ion-icon" viewBox="0 0 512 512"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="48" d="M328 112L184 256l144 144" class="ionicon-fill-none"></path></svg></div></template></ion-icon></button>
+    <div class="topbar-title">⏱️ Study Timer</div>
+  </div>
+
+  <!-- Pomodoro ring -->
+  <div style="text-align:center;margin:20px 0 24px;">
+    <div class="pomodoro-ring-wrap">
+      <svg viewBox="0 0 200 200" style="width:200px;height:200px;">
+        <circle cx="100" cy="100" r="88" stroke="rgba(255,255,255,0.05)" stroke-width="10" fill="none"></circle>
+        <circle cx="100" cy="100" r="88" id="pomArc" stroke="var(--blue)" stroke-width="10" fill="none" stroke-linecap="round" stroke-dasharray="552.9" stroke-dashoffset="0" style="transition: stroke-dashoffset 0.5s linear; transform: rotate(-90deg); transform-origin: center center; stroke: var(--blue); stroke-dashoffset: 552.9;"></circle>
+      </svg>
+      <div class="pomodoro-inner">
+        <div class="pomodoro-time" id="pomTime">25:00</div>
+        <div class="pomodoro-label" id="pomLabel">FOCUS</div>
+      </div>
+    </div>
+    <div id="pomSession" style="font-size:12px;color:var(--t3);margin-top:8px;">Session 1 of 4</div>
+  </div>
+
+  <!-- Duration presets -->
+  <div class="pom-presets">
+    <button class="pom-preset" data-action="setPomDuration" data-args="25,5" style="">25/5</button>
+    <button class="pom-preset" data-action="setPomDuration" data-args="50,10" style="">50/10</button>
+    <button class="pom-preset" data-action="setPomDuration" data-args="90,20">90/20</button>
+  </div>
+
+  <!-- Controls -->
+  <div style="display:flex;gap:12px;margin-bottom:20px;">
+    <button class="btn btn-ghost btn-lg" style="flex: 1 1 0%;" data-action="resetPomodoro">Reset</button>
+    <button class="btn btn-primary btn-lg" style="flex: 2 1 0%;" id="pomStartBtn" data-action="togglePomodoro">▶ Start</button>
+  </div>
+
+  <!-- Today's study log -->
+  <div class="sec">Today's Study Log</div>
+  <div id="studyLog" class="card" style="font-size:13px;color:var(--t2);padding:16px;">
+    <div id="studyLogInner">No sessions yet today.</div>
+  </div>
+</div>
+
+<!-- ════ LEADERBOARD SCREEN ════ -->
+<div id="sLeaderboard" class="scr">
+  <div class="topbar" style="padding-top:20px;">
+    <button class="topbar-back btn" data-action="goBack" style=""><ion-icon name="chevron-back-outline" role="img" class="md hydrated"><template shadowrootmode="open"><div class="icon-inner"><svg xmlns="http://www.w3.org/2000/svg" class="ionicon s-ion-icon" viewBox="0 0 512 512"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="48" d="M328 112L184 256l144 144" class="ionicon-fill-none"></path></svg></div></template></ion-icon></button>
+    <div class="topbar-title">🏆 Leaderboard</div>
+  </div>
+  <div class="lib-tabs" id="lbTabs">
+    <button class="lib-tab" data-action="switchLbTab" data-args="weekly">This Week</button>
+    <button class="lib-tab" data-action="switchLbTab" data-args="alltime" style="">All Time</button>
+    <button class="lib-tab" data-action="switchLbTab" data-args="accuracy" style="">Accuracy</button>
+  </div>
+  <div id="lbList"><div class="lb-row lb-me">
+      <div class="lb-rank gold">🥇</div>
+      <div class="lb-av">G</div>
+      <div class="lb-info">
+        <div class="lb-name">Guest (you)</div>
+        <div class="lb-sub">1 exams · 0% accuracy</div>
+      </div>
+      <div class="lb-val">0%</div>
+    </div></div>
+</div>
+
 <!-- ════ IMAGE ZOOM MODAL ════ -->
 <div id="zoomOverlay" style="display:none;position:fixed;inset:0;z-index:99990;background:rgba(4,7,14,.95);display:none;align-items:center;justify-content:center;padding:20px;" onclick="closeZoom()">
-  <img id="zoomImg" src="file:///C:/Users/potpot6000/Downloads/MPLE61_emotional_17.html" alt="Zoomed" style="max-width:100%;max-height:90vh;border-radius:12px;object-fit:contain;">
+  <img id="zoomImg" src="file:///C:/Users/potpot6000/Downloads/MPLE61_emotional_18.html" alt="Zoomed" style="max-width:100%;max-height:90vh;border-radius:12px;object-fit:contain;">
   <button style="position:absolute;top:20px;right:20px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);color:#fff;width:40px;height:40px;border-radius:99px;font-size:20px;cursor:pointer;" onclick="closeZoom()">✕</button>
 </div>
 
@@ -1681,12 +1975,12 @@ a.res-open-btn{display:flex;align-items:center;justify-content:center;gap:8px;wi
     <div style="text-align:center;margin-top:16px;opacity:.5;">© 2026 Master Plumber Board Reviewer · All rights reserved</div></div></div><!-- .shell -->
 
 <!-- ════ BOTTOM NAV ════ -->
-<nav id="bnav" class="visible">
-  <button class="bn-item active" id="bn-home" data-action="bnNav" data-args="sHome,bn-home"><ion-icon name="home-outline" role="img" class="md hydrated"><template shadowrootmode="open"><div class="icon-inner"><svg xmlns="http://www.w3.org/2000/svg" class="ionicon s-ion-icon" viewBox="0 0 512 512"><path d="M80 212v236a16 16 0 0016 16h96V328a24 24 0 0124-24h80a24 24 0 0124 24v136h96a16 16 0 0016-16V212" stroke-linecap="round" stroke-linejoin="round" class="ionicon-fill-none ionicon-stroke-width"></path><path d="M480 256L266.89 52c-5-5.28-16.69-5.34-21.78 0L32 256M400 179V64h-48v69" stroke-linecap="round" stroke-linejoin="round" class="ionicon-fill-none ionicon-stroke-width"></path></svg></div></template></ion-icon><span>Home</span><div class="bn-dot"></div></button>
+<nav id="bnav" class="">
+  <button class="bn-item" id="bn-home" data-action="bnNav" data-args="sHome,bn-home"><ion-icon name="home-outline" role="img" class="md hydrated"><template shadowrootmode="open"><div class="icon-inner"><svg xmlns="http://www.w3.org/2000/svg" class="ionicon s-ion-icon" viewBox="0 0 512 512"><path d="M80 212v236a16 16 0 0016 16h96V328a24 24 0 0124-24h80a24 24 0 0124 24v136h96a16 16 0 0016-16V212" stroke-linecap="round" stroke-linejoin="round" class="ionicon-fill-none ionicon-stroke-width"></path><path d="M480 256L266.89 52c-5-5.28-16.69-5.34-21.78 0L32 256M400 179V64h-48v69" stroke-linecap="round" stroke-linejoin="round" class="ionicon-fill-none ionicon-stroke-width"></path></svg></div></template></ion-icon><span>Home</span><div class="bn-dot"></div></button>
   <button class="bn-item" id="bn-quiz" data-action="bnNav" data-args="sCatLevels,bn-quiz"><ion-icon name="document-text-outline" role="img" class="md hydrated"><template shadowrootmode="open"><div class="icon-inner"><svg xmlns="http://www.w3.org/2000/svg" class="ionicon s-ion-icon" viewBox="0 0 512 512"><path d="M416 221.25V416a48 48 0 01-48 48H144a48 48 0 01-48-48V96a48 48 0 0148-48h98.75a32 32 0 0122.62 9.37l141.26 141.26a32 32 0 019.37 22.62z" stroke-linejoin="round" class="ionicon-fill-none ionicon-stroke-width"></path><path d="M256 56v120a32 32 0 0032 32h120M176 288h160M176 368h160" stroke-linecap="round" stroke-linejoin="round" class="ionicon-fill-none ionicon-stroke-width"></path></svg></div></template></ion-icon><span>Quiz</span><div class="bn-dot"></div></button>
-  <button class="bn-item" id="bn-lib" data-action="bnNav" data-args="sLibrary,bn-lib"><ion-icon name="library-outline" role="img" class="md hydrated"><template shadowrootmode="open"><div class="icon-inner"><svg xmlns="http://www.w3.org/2000/svg" class="ionicon s-ion-icon" viewBox="0 0 512 512"><rect x="32" y="96" width="64" height="368" rx="16" ry="16" stroke-linejoin="round" class="ionicon-fill-none ionicon-stroke-width"></rect><path stroke-linecap="round" stroke-linejoin="round" d="M112 224h128M112 400h128" class="ionicon-fill-none ionicon-stroke-width"></path><rect x="112" y="160" width="128" height="304" rx="16" ry="16" stroke-linejoin="round" class="ionicon-fill-none ionicon-stroke-width"></rect><rect x="256" y="48" width="96" height="416" rx="16" ry="16" stroke-linejoin="round" class="ionicon-fill-none ionicon-stroke-width"></rect><path d="M422.46 96.11l-40.4 4.25c-11.12 1.17-19.18 11.57-17.93 23.1l34.92 321.59c1.26 11.53 11.37 20 22.49 18.84l40.4-4.25c11.12-1.17 19.18-11.57 17.93-23.1L445 115c-1.31-11.58-11.42-20.06-22.54-18.89z" stroke-linejoin="round" class="ionicon-fill-none ionicon-stroke-width"></path></svg></div></template></ion-icon><span>Library</span><div class="bn-dot"></div></button>
+  <button class="bn-item" id="bn-lib" data-action="bnNav" data-args="sLibrary,bn-lib" style=""><ion-icon name="library-outline" role="img" class="md hydrated"><template shadowrootmode="open"><div class="icon-inner"><svg xmlns="http://www.w3.org/2000/svg" class="ionicon s-ion-icon" viewBox="0 0 512 512"><rect x="32" y="96" width="64" height="368" rx="16" ry="16" stroke-linejoin="round" class="ionicon-fill-none ionicon-stroke-width"></rect><path stroke-linecap="round" stroke-linejoin="round" d="M112 224h128M112 400h128" class="ionicon-fill-none ionicon-stroke-width"></path><rect x="112" y="160" width="128" height="304" rx="16" ry="16" stroke-linejoin="round" class="ionicon-fill-none ionicon-stroke-width"></rect><rect x="256" y="48" width="96" height="416" rx="16" ry="16" stroke-linejoin="round" class="ionicon-fill-none ionicon-stroke-width"></rect><path d="M422.46 96.11l-40.4 4.25c-11.12 1.17-19.18 11.57-17.93 23.1l34.92 321.59c1.26 11.53 11.37 20 22.49 18.84l40.4-4.25c11.12-1.17 19.18-11.57 17.93-23.1L445 115c-1.31-11.58-11.42-20.06-22.54-18.89z" stroke-linejoin="round" class="ionicon-fill-none ionicon-stroke-width"></path></svg></div></template></ion-icon><span>Library</span><div class="bn-dot"></div></button>
   <button class="bn-item" id="bn-earn" data-action="bnNav" data-args="sEarn,bn-earn" style="display: none;"><ion-icon name="wallet-outline" role="img" class="md hydrated"><template shadowrootmode="open"><div class="icon-inner"><svg xmlns="http://www.w3.org/2000/svg" class="ionicon s-ion-icon" viewBox="0 0 512 512"><rect x="48" y="144" width="416" height="288" rx="48" ry="48" stroke-linejoin="round" class="ionicon-fill-none ionicon-stroke-width"></rect><path d="M411.36 144v-30A50 50 0 00352 64.9L88.64 109.85A50 50 0 0048 159v49" stroke-linejoin="round" class="ionicon-fill-none ionicon-stroke-width"></path><path d="M368 320a32 32 0 1132-32 32 32 0 01-32 32z"></path></svg></div></template></ion-icon><span>Earnings</span><div class="bn-dot"></div></button>
-  <button class="bn-item" id="bn-profile" data-action="bnNav" data-args="sProfile,bn-profile"><ion-icon name="person-outline" role="img" class="md hydrated"><template shadowrootmode="open"><div class="icon-inner"><svg xmlns="http://www.w3.org/2000/svg" class="ionicon s-ion-icon" viewBox="0 0 512 512"><path d="M344 144c-3.92 52.87-44 96-88 96s-84.15-43.12-88-96c-4-55 35-96 88-96s92 42 88 96z" stroke-linecap="round" stroke-linejoin="round" class="ionicon-fill-none ionicon-stroke-width"></path><path d="M256 304c-87 0-175.3 48-191.64 138.6C62.39 453.52 68.57 464 80 464h352c11.44 0 17.62-10.48 15.65-21.4C431.3 352 343 304 256 304z" stroke-miterlimit="10" class="ionicon-fill-none ionicon-stroke-width"></path></svg></div></template></ion-icon><span>Profile</span><div class="bn-dot"></div></button>
+  <button class="bn-item active" id="bn-profile" data-action="bnNav" data-args="sProfile,bn-profile" style=""><ion-icon name="person-outline" role="img" class="md hydrated"><template shadowrootmode="open"><div class="icon-inner"><svg xmlns="http://www.w3.org/2000/svg" class="ionicon s-ion-icon" viewBox="0 0 512 512"><path d="M344 144c-3.92 52.87-44 96-88 96s-84.15-43.12-88-96c-4-55 35-96 88-96s92 42 88 96z" stroke-linecap="round" stroke-linejoin="round" class="ionicon-fill-none ionicon-stroke-width"></path><path d="M256 304c-87 0-175.3 48-191.64 138.6C62.39 453.52 68.57 464 80 464h352c11.44 0 17.62-10.48 15.65-21.4C431.3 352 343 304 256 304z" stroke-miterlimit="10" class="ionicon-fill-none ionicon-stroke-width"></path></svg></div></template></ion-icon><span>Profile</span><div class="bn-dot"></div></button>
 </nav>
 
 <!-- ════ OVERLAY / SHEETS ════ -->
@@ -5859,6 +6153,9 @@ function goTo(id,dir=''){
   if(id==='sSub') renderSubScreen();
   if(id==='sLibrary') renderLibrary();
   if(id==='sPartner') renderPartnerPortal();
+  if(id==='sBookmarks') renderBookmarks();
+  if(id==='sLeaderboard') renderLeaderboard();
+  if(id==='sTimer'){resetPomodoro();renderStudyLog();}
   try{window.scrollTo({top:0,behavior:'smooth'});}catch(e){}
 };
 function goBack(){
@@ -6148,6 +6445,10 @@ function renderHome(){
   renderWeakTopics(allStats);
   // Render dynamic course nav (replaces static category grid)
   renderCourseNav();
+  // Daily challenge banner
+  renderDailyBanner();
+  // Score trend chart
+  renderScoreTrend();
 }
 
 /* ─────────────────────────────────────────
@@ -7392,6 +7693,524 @@ function deleteResource(id){
 window.filterLibrary=filterLibrary;
 
 /* ═══════════════════════════════════════════════════════════════════
+   ① SOUND ENGINE — Web Audio API, no files needed
+   ═══════════════════════════════════════════════════════════════════ */
+let _audioCtx=null;
+function getAudioCtx(){
+  if(!_audioCtx) _audioCtx=new(window.AudioContext||window.webkitAudioContext)();
+  return _audioCtx;
+}
+function playSound(type){
+  try{
+    const ctx=getAudioCtx();
+    const o=ctx.createOscillator(),g=ctx.createGain();
+    o.connect(g);g.connect(ctx.destination);
+    if(type==='correct'){
+      o.frequency.setValueAtTime(523,ctx.currentTime);
+      o.frequency.setValueAtTime(659,ctx.currentTime+0.1);
+      o.frequency.setValueAtTime(784,ctx.currentTime+0.2);
+      g.gain.setValueAtTime(.2,ctx.currentTime);
+      g.gain.exponentialRampToValueAtTime(.001,ctx.currentTime+.5);
+      o.start();o.stop(ctx.currentTime+.5);
+    }else if(type==='wrong'){
+      o.type='sawtooth';
+      o.frequency.setValueAtTime(200,ctx.currentTime);
+      o.frequency.setValueAtTime(150,ctx.currentTime+0.1);
+      g.gain.setValueAtTime(.15,ctx.currentTime);
+      g.gain.exponentialRampToValueAtTime(.001,ctx.currentTime+.3);
+      o.start();o.stop(ctx.currentTime+.3);
+    }else if(type==='levelup'){
+      const freqs=[523,659,784,1047];
+      freqs.forEach((f,i)=>{
+        const o2=ctx.createOscillator(),g2=ctx.createGain();
+        o2.connect(g2);g2.connect(ctx.destination);
+        o2.frequency.value=f;
+        g2.gain.setValueAtTime(.15,ctx.currentTime+i*.12);
+        g2.gain.exponentialRampToValueAtTime(.001,ctx.currentTime+i*.12+.3);
+        o2.start(ctx.currentTime+i*.12);
+        o2.stop(ctx.currentTime+i*.12+.3);
+      });
+    }else if(type==='complete'){
+      o.frequency.setValueAtTime(392,ctx.currentTime);
+      o.frequency.setValueAtTime(523,ctx.currentTime+0.15);
+      g.gain.setValueAtTime(.18,ctx.currentTime);
+      g.gain.exponentialRampToValueAtTime(.001,ctx.currentTime+.6);
+      o.start();o.stop(ctx.currentTime+.6);
+    }else if(type==='tick'){
+      o.frequency.value=800;
+      g.gain.setValueAtTime(.05,ctx.currentTime);
+      g.gain.exponentialRampToValueAtTime(.001,ctx.currentTime+.05);
+      o.start();o.stop(ctx.currentTime+.05);
+    }
+  }catch(e){}
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   ② XP FLOATING ANIMATION
+   ═══════════════════════════════════════════════════════════════════ */
+function showXPFloat(pts, x, y){
+  const el=document.createElement('div');
+  el.className='xp-float';
+  el.textContent=`+${pts} XP`;
+  el.style.left=(x||window.innerWidth/2)+'px';
+  el.style.top=(y||window.innerHeight/2)+'px';
+  document.body.appendChild(el);
+  setTimeout(()=>el.remove(),1300);
+}
+
+function showStreakMilestone(streak){
+  if(streak<3||streak%5!==0) return;
+  const el=document.createElement('div');
+  el.className='streak-popup';
+  el.innerHTML=`<div style="font-size:56px;">🔥</div><div style="font-family:'Syne',sans-serif;font-size:24px;font-weight:800;color:var(--amber);margin-top:8px;">${streak} Day Streak!</div><div style="font-size:13px;color:var(--t2);margin-top:4px;">Bonus XP awarded!</div>`;
+  document.body.appendChild(el);
+  setTimeout(()=>el.remove(),2500);
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   ③ ENHANCED awardXP — floats, sounds, streak milestones
+   ═══════════════════════════════════════════════════════════════════ */
+function awardXP(pts, sourceEl){
+  const p=getPlayer();
+  const prev=p.level||1;
+  p.xp=(p.xp||0)+pts;
+  p.level=Math.floor(p.xp/100)+1;
+
+  // Streak
+  const today=new Date().toDateString();
+  let streakUp=false;
+  if(p.lastDate!==today){
+    const yest=new Date(Date.now()-86400000).toDateString();
+    const newStreak=p.lastDate===yest?(p.streak||0)+1:1;
+    if(newStreak>p.streak) streakUp=true;
+    p.streak=newStreak;
+    p.lastDate=today;
+  }
+  savePlayer(p);updateHUD();
+
+  // XP float animation
+  const rect=sourceEl?.getBoundingClientRect();
+  showXPFloat(pts, rect?rect.left+rect.width/2:null, rect?rect.top:null);
+
+  // Level up
+  if(p.level>prev){
+    playSound('levelup');
+    confetti();
+    toast(`🎉 Level ${p.level}! You're leveling up fast!`);
+  }
+
+  // Streak milestone
+  if(streakUp) showStreakMilestone(p.streak);
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   ④ DAILY CHALLENGE
+   ═══════════════════════════════════════════════════════════════════ */
+const DC_KEY='mp_daily_v1';
+function getDailyState(){ return LS.get(DC_KEY,{date:'',done:false,score:0}); }
+function saveDailyState(s){ LS.set(DC_KEY,s); }
+
+function getTodayDailyQuestion(){
+  // Pick a deterministic question based on today's date seed
+  const today=new Date().toDateString();
+  const allQ=[];
+  Object.keys(DB).forEach(cat=>{
+    Object.keys(DB[cat]).forEach(lvl=>{
+      DB[cat][lvl].forEach(q=>allQ.push({...q,cat,lvl}));
+    });
+  });
+  if(!allQ.length) return null;
+  // Seed from today's date
+  let seed=0;for(const ch of today) seed+=ch.charCodeAt(0);
+  return allQ[seed%allQ.length];
+}
+
+function renderDailyBanner(){
+  const banner=document.getElementById('dailyChallengeBanner');
+  if(!banner) return;
+  const state=getDailyState();
+  const today=new Date().toDateString();
+  const done=state.date===today&&state.done;
+  banner.style.display='flex';
+  const badge=document.getElementById('dailyBadge');
+  if(badge){ badge.textContent=done?'✓ Done':'NEW'; badge.className='daily-badge'+(done?' done':''); }
+}
+
+function openDailyChallenge(){
+  const today=new Date().toDateString();
+  const state=getDailyState();
+  const q=getTodayDailyQuestion();
+  if(!q){toast('Questions not loaded yet');return;}
+
+  const qEl=document.getElementById('dcQuestion');
+  const resEl=document.getElementById('dcResult');
+  const dateEl=document.getElementById('dcDate');
+  if(dateEl) dateEl.textContent=new Date().toLocaleDateString('en-PH',{weekday:'long',month:'long',day:'numeric'});
+
+  resEl.style.display='none';
+
+  // Already done today
+  if(state.date===today&&state.done){
+    qEl.innerHTML=`<div style="text-align:center;padding:16px;"><div style="font-size:32px;margin-bottom:8px;">✅</div><div style="font-weight:700;">Already completed today!</div><div style="font-size:13px;color:var(--t2);margin-top:6px;">Come back tomorrow for a new challenge.</div></div>`;
+    openSheet('dailyChallengeOverlay');return;
+  }
+
+  const L=['A','B','C','D'];
+  const choices=shuffle(q.choices).map((c,i)=>`
+    <button class="dc-choice choice" onclick="answerDaily(this,${q.choices.indexOf(c)},${q.a||0},'${c.replace(/'/g,"\\'")}')">
+      <span class="chltr">${L[i]}</span><span>${c}</span>
+    </button>`).join('');
+  qEl.innerHTML=`<div class="q-text" style="margin-bottom:14px;">${q.q}</div><div class="choices">${choices}</div>`;
+  openSheet('dailyChallengeOverlay');
+}
+
+function answerDaily(btn, chosenOrigIdx, correctOrigIdx, chosenText){
+  // Disable all choices
+  document.querySelectorAll('.dc-choice').forEach(b=>{b.disabled=true;});
+  const isCorrect = chosenOrigIdx===correctOrigIdx;
+  document.querySelectorAll('.dc-choice').forEach(b=>{
+    const txt=b.querySelector('span:last-child')?.textContent;
+    if(txt===chosenText) b.classList.add(isCorrect?'correct':'wrong');
+  });
+  const bonusXP=isCorrect?25:5;
+  const resEl=document.getElementById('dcResult');
+  resEl.style.display='block';
+  resEl.innerHTML=`<div class="card" style="margin-top:12px;text-align:center;padding:16px;">
+    <div style="font-size:28px;margin-bottom:6px;">${isCorrect?'🎉':'💪'}</div>
+    <div style="font-weight:700;font-size:15px;">${isCorrect?'Correct!':'Keep it up!'}</div>
+    <div style="font-size:12px;color:var(--t2);margin-top:4px;">+${bonusXP} XP earned today</div>
+  </div>`;
+  if(isCorrect) playSound('correct');
+  else playSound('wrong');
+  saveDailyState({date:new Date().toDateString(),done:true,score:isCorrect?1:0});
+  awardXP(bonusXP);
+  renderDailyBanner();
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   ⑤ BOOKMARKS
+   ═══════════════════════════════════════════════════════════════════ */
+const BM_KEY='mp_bookmarks_v1';
+function getBookmarks(){ return LS.get(BM_KEY,[]); }
+function saveBookmarks(a){ LS.set(BM_KEY,a); }
+
+function toggleBookmark(){
+  const q=currentQs[curIdx];
+  if(!q) return;
+  const bms=getBookmarks();
+  const id=`${currentCat}-${currentLvl}-${curIdx}-${q.q.slice(0,20)}`;
+  const exists=bms.findIndex(b=>b.id===id);
+  const btn=document.getElementById('bookmarkBtn');
+  if(exists>=0){
+    bms.splice(exists,1);saveBookmarks(bms);
+    toast('🔖 Removed from bookmarks');
+    if(btn) btn.classList.remove('active');
+  }else{
+    bms.unshift({id,q:q.q,choices:q.choices,a:q.a,explain:q.explain||'',cat:currentCat,lvl:currentLvl,savedAt:new Date().toISOString()});
+    saveBookmarks(bms);
+    toast('🔖 Bookmarked!');
+    playSound('complete');
+    if(btn) btn.classList.add('active');
+  }
+}
+
+function updateBookmarkBtn(){
+  const q=currentQs?.[curIdx];
+  if(!q) return;
+  const bms=getBookmarks();
+  const id=`${currentCat}-${currentLvl}-${curIdx}-${q.q.slice(0,20)}`;
+  const btn=document.getElementById('bookmarkBtn');
+  if(btn) btn.classList.toggle('active',bms.some(b=>b.id===id));
+}
+
+function renderBookmarks(){
+  const bms=getBookmarks();
+  const list=document.getElementById('bookmarkList');
+  const empty=document.getElementById('bookmarkEmpty');
+  if(!list) return;
+  if(!bms.length){list.innerHTML='';if(empty)empty.style.display='block';return;}
+  if(empty) empty.style.display='none';
+  list.innerHTML=bms.map(b=>`
+    <div class="bm-card">
+      <div style="flex:1;">
+        <div class="bm-q">${b.q}</div>
+        <div class="bm-ans">✓ ${b.choices[b.a]||'—'}</div>
+        <div class="bm-meta">${b.cat} · Level ${b.lvl} · ${new Date(b.savedAt).toLocaleDateString()}</div>
+      </div>
+      <button class="btn btn-ghost btn-sm" style="flex-shrink:0;" data-action="removeBookmark" data-args="${b.id}">🗑️</button>
+    </div>`).join('');
+}
+
+function removeBookmark(id){
+  saveBookmarks(getBookmarks().filter(b=>b.id!==id));
+  renderBookmarks();
+  toast('🗑️ Bookmark removed');
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   ⑥ SCORE TREND CHART (SVG sparkline)
+   ═══════════════════════════════════════════════════════════════════ */
+function renderScoreTrend(){
+  const allStats=getStats()[ukey()]||[];
+  if(allStats.length<2){document.getElementById('scoreTrendSection').style.display='none';return;}
+  document.getElementById('scoreTrendSection').style.display='block';
+
+  // Last 10 results sorted by date
+  const sorted=[...allStats].sort((a,b)=>new Date(a.date)-new Date(b.date)).slice(-10);
+  const vals=sorted.map(r=>r.pct||0);
+  const min=0,max=100;
+  const W=320,H=70,pad=4;
+  const xStep=(W-pad*2)/(vals.length-1||1);
+  const yScale=n=>H-pad-((n-min)/(max-min||1))*(H-pad*2);
+  const pts=vals.map((v,i)=>`${pad+i*xStep},${yScale(v)}`).join(' ');
+  const fillPts=`${pad},${H} ${pts} ${pad+(vals.length-1)*xStep},${H}`;
+
+  const svg=document.getElementById('trendSvg');
+  if(!svg) return;
+  svg.setAttribute('viewBox',`0 0 ${W} ${H}`);
+  svg.innerHTML=`
+    <defs>
+      <linearGradient id="tg" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="var(--blue)" stop-opacity=".25"/>
+        <stop offset="100%" stop-color="var(--blue)" stop-opacity="0"/>
+      </linearGradient>
+    </defs>
+    <polygon points="${fillPts}" fill="url(#tg)"/>
+    <polyline points="${pts}" fill="none" stroke="var(--blue)" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+    ${vals.map((v,i)=>`<circle cx="${pad+i*xStep}" cy="${yScale(v)}" r="3" fill="${v>=75?'var(--green)':v>=50?'var(--blue)':'var(--red)'}"/>`).join('')}
+    <text x="${pad}" y="${H-1}" font-size="9" fill="var(--t3)">${vals[0]}%</text>
+    <text x="${pad+(vals.length-1)*xStep}" y="${H-1}" text-anchor="end" font-size="9" fill="var(--t3)">${vals[vals.length-1]}%</text>`;
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   ⑦ RESULTS FILTER
+   ═══════════════════════════════════════════════════════════════════ */
+let _wrongQs=[];
+
+function filterResults(filter){
+  document.querySelectorAll('.res-filter-btn').forEach(b=>b.classList.toggle('active',b.getAttribute('data-args')===filter));
+  const rev=document.getElementById('resReview');
+  if(!rev) return;
+  rev.querySelectorAll('.rev-item').forEach(el=>{
+    const isWrong=el.classList.contains('wrong-item');
+    const isCorrect=el.classList.contains('correct-item');
+    if(filter==='all') el.style.display='';
+    else if(filter==='wrong') el.style.display=isWrong?'':'none';
+    else if(filter==='correct') el.style.display=isCorrect?'':'none';
+  });
+}
+
+function retryWrongOnly(){
+  if(!_wrongQs.length){toast('No wrong answers to retry!');return;}
+  currentQs=[..._wrongQs].map(q=>shuffleChoices(q));
+  curIdx=0;answers=new Array(currentQs.length).fill(null);score=0;
+  document.getElementById('qScoreChip').textContent=`0 / ${currentQs.length}`;
+  document.getElementById('qTimer').style.display='none';
+  goTo('sQuiz');renderQ();
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   ⑧ STUDY TIMER / POMODORO
+   ═══════════════════════════════════════════════════════════════════ */
+let pomInt=null, pomSecs=25*60, pomBreakSecs=5*60;
+let pomIsBreak=false, pomRunning=false, pomSession=1;
+let pomFocusMins=25, pomBreakMins=5;
+const StudyLog=[]; // session log for today
+
+function setPomDuration(argsStr){
+  const [f,b]=(argsStr||'25,5').split(',').map(Number);
+  pomFocusMins=f; pomBreakMins=b;
+  document.querySelectorAll('.pom-preset').forEach(btn=>{
+    btn.classList.toggle('active',btn.getAttribute('data-args')===argsStr);
+  });
+  resetPomodoro();
+}
+
+function togglePomodoro(){
+  if(pomRunning){ pausePomodoro(); }
+  else { startPomodoro(); }
+}
+
+function startPomodoro(){
+  if(!pomRunning){
+    pomRunning=true;
+    document.getElementById('pomStartBtn').textContent='⏸ Pause';
+    playSound('tick');
+    pomInt=setInterval(()=>{
+      if(pomIsBreak) pomSecs--;
+      else pomSecs--;
+
+      if(pomSecs<=0){
+        clearInterval(pomInt);pomRunning=false;
+        if(!pomIsBreak){
+          // Focus session complete
+          StudyLog.push({session:pomSession,mins:pomFocusMins,date:new Date().toLocaleTimeString()});
+          renderStudyLog();
+          awardXP(pomFocusMins*2);
+          playSound('levelup');
+          toast(`🎉 Session ${pomSession} complete! +${pomFocusMins*2} XP`);
+          pomIsBreak=true;
+          pomSecs=pomBreakMins*60;
+          document.getElementById('pomLabel').textContent='BREAK';
+          document.getElementById('pomArc').style.stroke='var(--green)';
+        }else{
+          pomIsBreak=false;
+          pomSession++;
+          pomSecs=pomFocusMins*60;
+          document.getElementById('pomLabel').textContent='FOCUS';
+          document.getElementById('pomArc').style.stroke='var(--blue)';
+          playSound('complete');
+          toast('☕ Break over — back to studying!');
+        }
+        document.getElementById('pomSession').textContent=`Session ${pomSession} of 4`;
+        document.getElementById('pomStartBtn').textContent='▶ Start';
+        updatePomDisplay();
+        return;
+      }
+      updatePomDisplay();
+      if(pomSecs===300&&!pomIsBreak) toast('⏱️ 5 minutes remaining in this session!');
+    },1000);
+  }
+}
+
+function pausePomodoro(){
+  clearInterval(pomInt);pomRunning=false;
+  document.getElementById('pomStartBtn').textContent='▶ Resume';
+}
+
+function resetPomodoro(){
+  clearInterval(pomInt);pomRunning=false;
+  pomIsBreak=false;
+  pomSecs=pomFocusMins*60;
+  document.getElementById('pomStartBtn').textContent='▶ Start';
+  document.getElementById('pomLabel').textContent='FOCUS';
+  document.getElementById('pomArc').style.stroke='var(--blue)';
+  updatePomDisplay();
+}
+
+function updatePomDisplay(){
+  const m=Math.floor(pomSecs/60),s=pomSecs%60;
+  document.getElementById('pomTime').textContent=`${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}`;
+  const total=pomIsBreak?pomBreakMins*60:pomFocusMins*60;
+  const pct=(total-pomSecs)/total;
+  const circ=552.9;
+  document.getElementById('pomArc').style.strokeDashoffset=circ*(1-pct);
+}
+
+function renderStudyLog(){
+  const el=document.getElementById('studyLogInner');
+  if(!el) return;
+  if(!StudyLog.length){el.textContent='No sessions yet today.';return;}
+  const totalMins=StudyLog.reduce((a,s)=>a+s.mins,0);
+  el.innerHTML=`<div style="font-weight:700;color:var(--blue-hi);margin-bottom:8px;">Total today: ${totalMins} min · ${StudyLog.length} session${StudyLog.length>1?'s':''}</div>`
+    +StudyLog.map(s=>`<div style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid var(--border);"><span>Session ${s.session}</span><span style="color:var(--t3);">${s.mins} min · ${s.date}</span></div>`).join('');
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   ⑨ LEADERBOARD
+   ═══════════════════════════════════════════════════════════════════ */
+let lbCurrentTab='weekly';
+const LB_KEY='mp_lb_scores_v1';
+
+function updateLeaderboard(){
+  if(!U||!ukey()) return;
+  const all=LS.get(LB_KEY,{});
+  const allStats=getStats()[ukey()]||[];
+  const p=getPlayer();
+  const weeklyXP=p.xp||0;
+  const totalQ=allStats.reduce((a,r)=>a+r.total,0);
+  const totalCorrect=allStats.reduce((a,r)=>a+r.score,0);
+  const avgAcc=totalQ?Math.round(totalCorrect/totalQ*100):0;
+  all[ukey()]={name:U.name,weeklyXP,totalXP:p.xp||0,accuracy:avgAcc,sessions:allStats.length,updatedAt:new Date().toISOString()};
+  LS.set(LB_KEY,all);
+}
+
+function renderLeaderboard(){
+  updateLeaderboard();
+  const all=LS.get(LB_KEY,{});
+  const list=document.getElementById('lbList');
+  if(!list) return;
+
+  let entries=Object.entries(all).map(([key,d])=>({key,...d}));
+  if(lbCurrentTab==='weekly') entries.sort((a,b)=>b.weeklyXP-a.weeklyXP);
+  else if(lbCurrentTab==='alltime') entries.sort((a,b)=>b.totalXP-a.totalXP);
+  else entries.sort((a,b)=>b.accuracy-a.accuracy);
+
+  if(!entries.length){list.innerHTML='<div class="card" style="text-align:center;padding:32px;color:var(--t2);">No data yet — take some exams to appear here!</div>';return;}
+
+  const medals=['🥇','🥈','🥉'];
+  list.innerHTML=entries.slice(0,20).map((e,i)=>{
+    const isMe=e.key===ukey();
+    const rankCls=i===0?'gold':i===1?'silver':i===2?'bronze':'';
+    const val=lbCurrentTab==='accuracy'?e.accuracy+'%':lbCurrentTab==='weekly'?e.weeklyXP+' XP':e.totalXP+' XP';
+    const initials=(e.name||'?').split(' ').map(w=>w[0]).join('').slice(0,2).toUpperCase();
+    return `<div class="lb-row${isMe?' lb-me':''}">
+      <div class="lb-rank ${rankCls}">${i<3?medals[i]:i+1}</div>
+      <div class="lb-av">${initials}</div>
+      <div class="lb-info">
+        <div class="lb-name">${e.name||'Reviewer'}${isMe?' (you)':''}</div>
+        <div class="lb-sub">${e.sessions||0} exams · ${e.accuracy||0}% accuracy</div>
+      </div>
+      <div class="lb-val">${val}</div>
+    </div>`;
+  }).join('');
+}
+
+function switchLbTab(tab){
+  lbCurrentTab=tab;
+  document.querySelectorAll('#lbTabs .lib-tab').forEach(b=>b.classList.toggle('active',b.getAttribute('data-args')===tab));
+  renderLeaderboard();
+}
+
+/* Enhanced selectChoice with sounds */
+const _origSelectChoice = selectChoice;
+function selectChoice(i){
+  _origSelectChoice(i);
+  const q=currentQs[curIdx];
+  const correctIdx=(q.a!==undefined)?q.a:(q.answerIndex||0);
+  if(i===correctIdx) playSound('correct');
+  else playSound('wrong');
+  updateBookmarkBtn();
+}
+
+/* Enhanced showResults with new features */
+const _origShowResults = showResults;
+function showResults(){
+  _origShowResults();
+  // Collect wrong questions for retry
+  _wrongQs=currentQs.filter((_,i)=>{
+    const q=currentQs[i];
+    const ci=(q.a!==undefined)?q.a:(q.answerIndex||0);
+    return answers[i]!==ci;
+  });
+  const retryBtn=document.getElementById('retryWrongBtn');
+  if(retryBtn) retryBtn.style.display=_wrongQs.length>0?'flex':'none';
+  // Color rev items
+  setTimeout(()=>{
+    document.querySelectorAll('.rev-item').forEach((el,i)=>{
+      const q=currentQs[i];
+      const ci=(q?.a!==undefined)?q.a:(q?.answerIndex||0);
+      const ua=answers[i];
+      el.classList.add(ua===ci?'correct-item':'wrong-item');
+    });
+  },100);
+  renderScoreTrend();
+  updateLeaderboard();
+  const total=currentQs.length;
+  const pct=Math.round(score/total*100);
+  if(pct>=75) playSound('complete');
+}
+
+/* Enhanced renderQ — update bookmark state */
+const _origRenderQNew = renderQ;
+function renderQ(){
+  _origRenderQNew();
+  updateBookmarkBtn();
+}
+
+
+
+/* ═══════════════════════════════════════════════════════════════════
    PARTNER PORTAL
    Questions/lectures uploaded by professors & review centers.
    Each partner's content is keyed by their unique refCode so
@@ -7980,6 +8799,10 @@ document.addEventListener('click',e=>{
     applyBranding, deletePartner, openAddPartnerSheet, savePartner,
     switchPortalTab, saveUploadedQuestions, saveManualQuestion,
     savePartnerLecture, deletePartnerQuestion, deletePartnerLecture,
+    openDailyChallenge, toggleBookmark, removeBookmark,
+    filterResults, retryWrongOnly,
+    togglePomodoro, resetPomodoro, setPomDuration,
+    switchLbTab,
   };
   const fn=fnMap[action];
   if(fn) fn(...args);
